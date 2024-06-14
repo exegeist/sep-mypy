@@ -1,8 +1,8 @@
 from mypy.meet import TypeMeetVisitor
 from mypy.state import state
-from mypy.types import DeletedType, ProperType, NoneType, UninhabitedType
+from mypy.types import DeletedType, ProperType, NoneType, UninhabitedType, TypeVarTupleType
 
-branch_coverage = {
+branch_coverage_deleted_type = {
     "visit_NoneType": False,
     "visit_UninhabitedType": False,
     "visit_other_Type": False,
@@ -10,7 +10,20 @@ branch_coverage = {
     "visit_non_strict_optional": False
 }
 
-def print_coverage():
+branch_coverage_var_tuple = {
+    "visit_tuple_same_id": False,
+    "tuple.s_bigger_min": False,
+    "tuple.t_bigger_equal_min": False,
+    "visit_other_Type": False
+}
+
+def print_visit_deleted_coverage():
+    print_coverage(branch_coverage_deleted_type)
+
+def print_visit_var_tuple_coverage():
+    print_coverage(branch_coverage_var_tuple)
+
+def print_coverage(branch_coverage):
     total_branches = len(branch_coverage)
     print(f"Total number of branches: {total_branches}\n")
     print("Results:")
@@ -23,19 +36,32 @@ def print_coverage():
 class TestTypeMeetVisitor(TypeMeetVisitor):
     def visit_deleted_type(self, t: DeletedType) -> ProperType:
         if isinstance(self.s, NoneType):
-            branch_coverage["visit_NoneType"] = True
+            branch_coverage_deleted_type["visit_NoneType"] = True
             if state.strict_optional:
-                branch_coverage["visit_strict_optional"] = True
+                branch_coverage_deleted_type["visit_strict_optional"] = True
                 return t
             else:
-                branch_coverage["visit_non_strict_optional"] = True
+                branch_coverage_deleted_type["visit_non_strict_optional"] = True
                 return self.s
         elif isinstance(self.s, UninhabitedType):
-            branch_coverage["visit_UninhabitedType"] = True
+            branch_coverage_deleted_type["visit_UninhabitedType"] = True
             return self.s
         else:
-            branch_coverage["visit_other_Type"] = True
+            branch_coverage_deleted_type["visit_other_Type"] = True
             return t
+        
+    def visit_type_var_tuple(self, t: TypeVarTupleType) -> ProperType:
+        if isinstance(self.s, TypeVarTupleType) and self.s.id == t.id:
+            branch_coverage_var_tuple["visit_tuple_same_id"] = True
+            if self.s.min_len > t.min_len:
+                branch_coverage_var_tuple["tuple.s_bigger_min"] = True
+                return self.s
+            else:
+                branch_coverage_var_tuple["tuple.t_bigger_equal_min"] = True
+                return t
+        else:
+            branch_coverage_var_tuple["visit_other_Type"] = True
+            return self.default(self.s)
 
 
 

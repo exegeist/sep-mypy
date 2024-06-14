@@ -1,0 +1,20 @@
+Passed Test: visit_tuple_same_id and tuple.s_bigger_min
+Passed Test: visit_tuple_same_id and tuple.t_bigger_min
+Passed Test: visit_tuple_same_id and tuple.t_equal_min
+Passed Test: Tuples with different Ids
+Passed Test: visit_other_Type
+
+All tests passed.
+
+Coverage results:
+
+Total number of branches: 4
+
+Results:
+visit_tuple_same_id was hit
+tuple.s_bigger_min was hit
+tuple.t_bigger_equal_min was hit
+visit_other_Type was hit
+
+Number of branches hit: 4
+Total branch coverage: 100.0%

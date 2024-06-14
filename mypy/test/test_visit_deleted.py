@@ -1,5 +1,5 @@
 import sys
-from mypy.meet_with_coverage import TestTypeMeetVisitor, print_coverage
+from mypy.meet_with_coverage import TestTypeMeetVisitor, print_visit_deleted_coverage
 from mypy.state import state
 from mypy.types import DeletedType, ProperType, NoneType, UninhabitedType
 from mypy.test.helpers import Suite
@@ -7,7 +7,7 @@ from mypy.test.helpers import Suite
 class TestVisitDeletedSuite(Suite):
     def test_visit_deleted(self):
         original_stdout = sys.stdout
-        with open('test_output.txt', 'w') as f:
+        with open('test_visit_deleted_output.txt', 'w') as f:
             sys.stdout = f
             try:
                 t = DeletedType()
@@ -44,7 +44,7 @@ class TestVisitDeletedSuite(Suite):
 
                 print("\nAll tests passed.\n") 
                 print("Coverage results:\n")
-                print_coverage()
+                print_visit_deleted_coverage()
             finally:
                 sys.stdout = original_stdout
     
