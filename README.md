@@ -2,13 +2,13 @@
 
 ## Project chosen
 
-Name: <TODO>
+Name: mypy
 
-URL: <TODO>
+URL: https://github.com/python/mypy
 
-Number of lines of code and the tool used to count it: <TODO>
+Number of lines of code and the tool used to count it: 86.419 KLOC counted using lizard
 
-Programming language: <TODO>
+Programming language: Python
 
 ## Coverage measurement
 
@@ -16,7 +16,17 @@ Programming language: <TODO>
 
 <Inform the name of the existing tool that was executed and how it was executed>
 
+Tool: Pytest-cov which uses coverage.py under the hood (it says coverage.py v7.3.2 in the screenshot)
+
+Command: python -m pytest -q --cov mypy --cov-config .coveragerc --cov-report=term-missing --cov-report=html
+
 <Show the coverage results provided by the existing tool with a screenshot>
+
+![Screenshot 1](cov-before-ss1.png)
+![Screenshot 2](cov-before-ss2.png)
+![Screenshot 3](cov-before-ss3.png)
+![Screenshot 4](cov-before-ss4.png)
+![Screenshot 5](cov-before-ss5.png)
 
 ### Your own coverage tool
 
