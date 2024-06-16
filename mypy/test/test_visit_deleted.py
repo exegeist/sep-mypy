@@ -4,7 +4,7 @@ from mypy.state import state
 from mypy.types import DeletedType, ProperType, NoneType, UninhabitedType
 from mypy.test.helpers import Suite
 
-class TestVisitDeletedSuite(Suite):
+class VisitDeletedSuite(Suite):
     def test_visit_deleted(self):
         original_stdout = sys.stdout
         with open('test_visit_deleted_output.txt', 'w') as f:

@@ -4,7 +4,7 @@ from mypy.types import TypeVarTupleType, TypeVarId, Type, Instance, ProperType
 from mypy.test.helpers import Suite
 from mypy.nodes import TypeInfo, SymbolTable, ClassDef, Block
 
-class TestVisitVarTupleSuite(Suite):
+class VisitVarTupleSuite(Suite):
     def test_visit_var_tuple(self):
         original_stdout = sys.stdout
         with open('test_visit_var_tuple_output.txt', 'w') as f:
