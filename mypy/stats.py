@@ -480,32 +480,10 @@ def is_complex(t: Type) -> bool:
 def is_special_form_any(t: AnyType) -> bool:
     return get_original_any(t).type_of_any == TypeOfAny.special_form
 
-get_original_any_branches = {
-    "t_not_original_any" : False,
-    "t_original_any" : False 
-}
-
 
 def get_original_any(t: AnyType) -> AnyType:
     if t.type_of_any == TypeOfAny.from_another_any:
-        get_original_any_branches["t_not_original_any"] = True
         assert t.source_any
         assert t.source_any.type_of_any != TypeOfAny.from_another_any
         t = t.source_any
-    else:
-        get_original_any_branches["t_original_any"] = True
     return t
-
-
-def print_get_original_any_coverage():
-    print_coverage(get_original_any_branches)
-
-def print_coverage(branch_coverage):
-    total_branches = len(branch_coverage)
-    print(f"Total number of branches: {total_branches}\n")
-    print("Results:")
-    for branch, hit in branch_coverage.items():
-        print(f"{branch} was {'hit' if hit else 'not hit'}")
-    num_branches_hit = sum(branch_coverage.values())
-    print(f"\nNumber of branches hit: {num_branches_hit}")
-    print(f"Total branch coverage: {num_branches_hit / total_branches * 100}%")
