@@ -56,7 +56,7 @@ Coverage tool implemented in mypy/meet_with_coverage.py as it allowed for a bett
 
 https://github.com/python/mypy/commit/e63f6189d20e5663f18001252845db82c6a6c875
 
-Coverage results output can also be seen in /test_visit_deleted_output.txt (TODO ADD LINK TO FILE)
+Coverage results output can also be seen in [test_visit_deleted_output.txt](test_visit_deleted_output.txt)
 
 !["Output txt file when running visit_deleted_type()](visit_deleted_type_output.png))
 
@@ -65,6 +65,8 @@ Original function name: visit_type_var_tuple() in mypy/meet.py
 Coverage tool implemented in mypy/meet_with_coverage.py as it again allowed for a better printing system and code organisation. The function visit_type_var_tuple() in meet_with_coverage.py is a copy/overridden version of the same function in mypy/meet.py
 
 https://github.com/python/mypy/commit/e63f6189d20e5663f18001252845db82c6a6c875
+
+Coverage results output can also be seen in [test_visit_var_tuple_output.txt](test_visit_var_tuple_output.txt)
 
 !["Output txt file when running visit_type_var_tuple_output()](visit_type_var_tuple_output.png))
 
