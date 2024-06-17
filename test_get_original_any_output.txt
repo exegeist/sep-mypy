@@ -1,0 +1,19 @@
+
+Test 1:
+Test 1 passed.
+
+Test 2:
+Test 2 passed.
+
+All tests passed.
+
+Coverage results:
+
+Total number of branches: 2
+
+Results:
+t_not_original_any was hit
+t_original_any was hit
+
+Number of branches hit: 2
+Total branch coverage: 100.0%
