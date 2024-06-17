@@ -32,7 +32,7 @@ Command: python -m pytest -q --cov mypy --cov-config .coveragerc --cov-report=te
 
 <The following is supposed to be repeated for each group member>
 
-<Group member name>
+<Group member name> Shane Prent
 
 <Function 1 name>
 
