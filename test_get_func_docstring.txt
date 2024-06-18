@@ -1,0 +1,25 @@
+# Test 1
+Test 1 passed.
+# Test 2
+Test 2 passed.
+# Test 3
+Test 3 passed.
+# Test 4
+Test 4 passed.
+# Test 5
+Test 5 passed.
+
+All tests passed.
+
+Coverage results:
+
+Total number of branches: 4
+
+Results:
+empty_body_return_none was hit
+non_empty_body_check_expr was hit
+expr_is_docstring_return_value was hit
+expr_not_docstring_return_none was hit
+
+Number of branches hit: 4
+Total branch coverage: 100.0%
