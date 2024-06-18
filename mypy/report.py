@@ -130,7 +130,9 @@ def alias_reporter(source_reporter: str, target_reporter: str) -> None:
 
 branch_coverage_should_skip_path = {
     "special_module": False,
+    "not_special": False,
     "parent_directory": False,
+    "not_parent": False,
     "contains_stubs": False,
     "normal_path": False
 }
@@ -142,9 +144,11 @@ def should_skip_path(path: str) -> bool:
     if stats.is_special_module(path):
         branch_coverage_should_skip_path["special_module"] = True
         return True
+    branch_coverage_should_skip_path["not_special"] = True
     if path.startswith(".."):
         branch_coverage_should_skip_path["parent_directory"] = True
         return True
+    branch_coverage_should_skip_path["not_parent"] = True
     if "stubs" in path.split("/") or "stubs" in path.split(os.sep):
         branch_coverage_should_skip_path["contains_stubs"] = True
         return True
