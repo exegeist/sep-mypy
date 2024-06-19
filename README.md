@@ -125,7 +125,7 @@ The total coverage improvement is 100%, as both the statement and branch coverag
 
 Test file name: [mypy/test/test_visit_var_tuple.py](mypy/test/test_visit_var_tuple.py)
 
-New test created to test the function visit_deleted_type in meet_with_coverage.py.
+New test created to test the function visit_type_var_tuple in meet_with_coverage.py.
 
 https://github.com/python/mypy/commit/0a938d60da9fc923b9f9e7a67400b72b7c770f30
 
