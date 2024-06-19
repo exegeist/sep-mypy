@@ -137,7 +137,7 @@ Old coverage results for visit_type_var_tuple():
 
 New coverage results for visit_type_var_tuple(): 
 
-![Old coverage results for visit_type_var_tuple()](cov-new-visit-var-tuple.png)
+![New coverage results for visit_type_var_tuple()](cov-new-visit-var-tuple.png)
 
 *Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
 
