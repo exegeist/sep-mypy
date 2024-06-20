@@ -3,13 +3,15 @@ All tests passed.
 
 Coverage results:
 
-Total number of branches: 4
+Total number of branches: 6
 
 Results:
 special_module was hit
+not_special was hit
 parent_directory was hit
+not_parent was hit
 contains_stubs was hit
 normal_path was hit
 
-Number of branches hit: 4
+Number of branches hit: 6
 Total branch coverage: 100.0%
