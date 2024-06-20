@@ -47,8 +47,7 @@ Command: python -m pytest -q --cov mypy --cov-config .coveragerc --cov-report=te
 
 
 
-
-Shane Prent (Goose-9 on Github)
+#### Shane Prent (Goose-9 on Github)
 
 <Function 1>
 
@@ -74,6 +73,38 @@ Coverage results output can also be seen in [test_visit_var_tuple_output.txt](te
 
 !["Output txt file when running visit_type_var_tuple_output()](visit_type_var_tuple_output.png))
 
+
+
+#### Justin Prent (JustinPrent on Github)
+
+<get_line_rate()> in mypy/report.py
+
+The link below shows the comparison between my working branch and the original master branch. It also includes the pretty print used to create the coverage output:
+
+NB! Only lines 130-158 of mypy/report.py are relevant to this function.   
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
+
+
+Coverage results output can be seen in [test_line_rate.txt](test_line_rate.txt)
+
+*Results of Test:*
+
+![Output of .txt file created when running test_line_rate.py](test_line_rate_output_photo.png)
+
+
+<should_skip_path()> in mypy/report.py
+
+The link below shows the comparison between my working branch and the original master branch. It is the same link given in the function above:
+
+NB! Only lines 595-620 of mypy/report.py are relevant to this function.     
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
+
+Coverage results output can be seen in [test_skip_path.txt](test_skip_path.txt)
+
+*Results of Test:*
+
+![Output of .txt file created when running test_skip_path.py](test_skip_path_output_photo.png)
+
 ## Coverage improvement
 
 ### Individual tests
@@ -87,9 +118,10 @@ Coverage results output can also be seen in [test_visit_var_tuple_output.txt](te
 <Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test>
 
 <Provide a screenshot of the old coverage results (the same as you already showed above)>
-<Provide a screenshot of the new coverage results>
 
-<State the coverage improvement with a number and elaborate on why the coverage is improved>
+< Provide a screenshot of the new coverage results>
+
+< State the coverage improvement with a number and elaborate on why the coverage is improved>
 
 <Test 2>
 
@@ -97,7 +129,7 @@ Coverage results output can also be seen in [test_visit_var_tuple_output.txt](te
 
 
 
-Shane Prent (Goose-9 on Github)
+#### Shane Prent (Goose-9 on Github)
 
 <Test 1>
 
@@ -148,6 +180,49 @@ The total coverage improvement is 100%, as both the statement and branch coverag
 ![Total coverage for meet_with_coverage.py](cov-total-meet_with_coverage.png)
 
 
+### Justin Prent (Goose-9 on Github)
+
+<Test 1>
+
+Test file name: [mypy/test/test_line_rate.py](mypy/test/test_line_rate.py)
+
+New test created to test the function get_line_rate() in mypy/report.py.
+
+NB! Only the file "mypy/test/test_line_rate.py" is relevant to this section.  
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working 
+
+
+
+#### Old coverage results for get_line_rate():  
+*Coverage is 0% for statement and branch coverage*
+
+![Old coverage results for get_line_rate()](cov-old-line-rate.png)
+
+
+#### New coverage results for get_line_rate(): 
+
+//TODO add screenshot of new coverage and explanation
+
+
+<Test 2>
+
+Test file name: [mypy/test/test_skip_path.py](mypy/test/test_skip_path.py)
+
+New test created to test the function should_skip_path() in mypy/report.py.
+
+NB! Only the file "mypy/test/test_skip_path.py" is relevant to this section.  
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working 
+
+
+#### Old coverage results for should_skip_path():  
+*Coverage is 0% for statement and branch coverage*
+
+![Old coverage results for should_skip_path()](cov-old-skip-path.png)
+
+#### New coverage results for should_skip_path(): 
+
+//TODO add screenshot of new coverage and explanation
+
 ### Overall
 
 <Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)>
@@ -160,8 +235,13 @@ Command to run: python -m pytest -q --cov mypy --cov-config .coveragerc --cov-re
 
 <Write what each group member did>
 
-Shane Prent (Goose-9 on Github):
+#### Shane Prent (Goose-9 on Github):
 - Created pretty print and manipulation of the output buffer to allow for the groups coverage tool to be outputted and saved to a file when running tests.
 - Completed project information section in the report as well as completing the full coverage reports seen in this document.
 - Implemented a coverage tool on 2 different functions with, originally, 0% coverage.
 - Created a test for each of the 2 functions, resulting in a coverage improvement (statement and branch) of 100% over the 2 functions.
+
+#### Justin Prent (JustinPrent on Github):
+- Implemented an original coverage tool on 2 different functions, which originally had 0% coverage. 
+- Created a test for each of the 2 functions, ensuring coverage over every branch and statement, while also testing the logic of each function further to ensure correctness. This resulted in a coverage of 100% over the 2 functions.
+- Completed the relevant sections in the report under the name Justin Prent.

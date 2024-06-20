@@ -11,3 +11,8 @@ visit_non_empty_lines was hit
 
 Number of branches hit: 2
 Total branch coverage: 100.0%
+
+
+
+
+
