@@ -128,13 +128,31 @@ def alias_reporter(source_reporter: str, target_reporter: str) -> None:
     reporter_classes[target_reporter] = reporter_classes[source_reporter]
 
 
+branch_coverage_should_skip_path = {
+    "special_module": False,
+    "not_special": False,
+    "parent_directory": False,
+    "not_parent": False,
+    "contains_stubs": False,
+    "normal_path": False
+}
+
+def print_skip_path_coverage():
+    print_coverage(branch_coverage_should_skip_path)
+
 def should_skip_path(path: str) -> bool:
     if stats.is_special_module(path):
+        branch_coverage_should_skip_path["special_module"] = True
         return True
+    branch_coverage_should_skip_path["not_special"] = True
     if path.startswith(".."):
+        branch_coverage_should_skip_path["parent_directory"] = True
         return True
+    branch_coverage_should_skip_path["not_parent"] = True
     if "stubs" in path.split("/") or "stubs" in path.split(os.sep):
+        branch_coverage_should_skip_path["contains_stubs"] = True
         return True
+    branch_coverage_should_skip_path["normal_path"] = True
     return False
 
 
@@ -574,11 +592,31 @@ class MemoryXmlReporter(AbstractReporter):
 register_reporter("memory-xml", MemoryXmlReporter, needs_lxml=True)
 
 
+branch_coverage_line_rate = {
+    "visit_empty_lines": False,
+    "visit_non_empty_lines": False
+}
+
 def get_line_rate(covered_lines: int, total_lines: int) -> str:
     if total_lines == 0:
+        branch_coverage_line_rate["visit_empty_lines"] = True
         return str(1.0)
     else:
+        branch_coverage_line_rate["visit_non_empty_lines"] = True
         return f"{covered_lines / total_lines:.4f}"
+
+def print_line_rate_coverage():
+    print_coverage(branch_coverage_line_rate)
+
+def print_coverage(branch_coverage):
+    total_branches = len(branch_coverage)
+    print(f"Total number of branches: {total_branches}\n")
+    print("Results:")
+    for branch, hit in branch_coverage.items():
+        print(f"{branch} was {'hit' if hit else 'not hit'}")
+    num_branches_hit = sum(branch_coverage.values())
+    print(f"\nNumber of branches hit: {num_branches_hit}")
+    print(f"Total branch coverage: {num_branches_hit / total_branches * 100}%")
 
 
 class CoberturaPackage:
