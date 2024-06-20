@@ -180,7 +180,7 @@ The total coverage improvement is 100%, as both the statement and branch coverag
 ![Total coverage for meet_with_coverage.py](cov-total-meet_with_coverage.png)
 
 
-### Justin Prent (Goose-9 on Github)
+### Justin Prent (JustinPrent on Github)
 
 <Test 1>
 
