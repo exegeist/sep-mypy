@@ -50,7 +50,7 @@ Command: python -m pytest -q --cov mypy --cov-config .coveragerc --cov-report=te
 
 Shane Prent (Goose-9 on Github)
 
-<Function 1>
+<!--Function 1-->
 
 visit_deleted_type() in mypy/meet.py
 
@@ -60,9 +60,9 @@ https://github.com/python/mypy/commit/e63f6189d20e5663f18001252845db82c6a6c875
 
 Coverage results output can also be seen in [test_visit_deleted_output.txt](test_visit_deleted_output.txt)
 
-!["Output txt file when running visit_deleted_type()](visit_deleted_type_output.png))
+!["Output txt file when running visit_deleted_type()](visit_deleted_type_output.png)
 
-<Function 2>
+<!--Function 2-->
 
 visit_type_var_tuple() in mypy/meet.py
 
@@ -72,7 +72,7 @@ https://github.com/python/mypy/commit/e63f6189d20e5663f18001252845db82c6a6c875
 
 Coverage results output can also be seen in [test_visit_var_tuple_output.txt](test_visit_var_tuple_output.txt)
 
-!["Output txt file when running visit_type_var_tuple_output()](visit_type_var_tuple_output.png))
+!["Output txt file when running visit_type_var_tuple_output()](visit_type_var_tuple_output.png)
 
 ## Coverage improvement
 
@@ -99,7 +99,7 @@ Coverage results output can also be seen in [test_visit_var_tuple_output.txt](te
 
 Shane Prent (Goose-9 on Github)
 
-<Test 1>
+<!--Test 1-->
 
 Test file name: [mypy/test/test_visit_deleted.py](mypy/test/test_visit_deleted.py)
 
@@ -121,7 +121,7 @@ New coverage results for visit_deleted_type():
 
 The total coverage improvement is 100%, as both the statement and branch coverage increased from 0% in the original function to 100% after the test was added. The coverage increased as the test caused all the different branches in the main function to run and checks the output of the function to make sure it is correct. As every statement is run in the function, the statement coverage is 100% and likewise, since all the branches are accounted for and run, the branch coverage is also 100%.
 
-<Test 2>
+<!--Test 2-->
 
 Test file name: [mypy/test/test_visit_var_tuple.py](mypy/test/test_visit_var_tuple.py)
 
