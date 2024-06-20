@@ -149,6 +149,26 @@ from mypy.types import (
 )
 from mypy.visitor import NodeVisitor
 
+get_func_docstring_branchs = {
+    "empty_body_return_none": False,
+    "non_empty_body_check_expr": False,
+    "expr_is_docstring_return_value": False,
+    "expr_not_docstring_return_none": False
+}
+
+def print_get_func_docstring():
+    print_coverage(get_func_docstring_branchs)
+
+def print_coverage(branch_coverage):
+    total_branches = len(branch_coverage)
+    print(f"Total number of branches: {total_branches}\n")
+    print("Results:")
+    for branch, hit in branch_coverage.items():
+        print(f"{branch} was {'hit' if hit else 'not hit'}")
+    num_branches_hit = sum(branch_coverage.values())
+    print(f"\nNumber of branches hit: {num_branches_hit}")
+    print(f"Total branch coverage: {num_branches_hit / total_branches * 100}%")
+
 # Common ways of naming package containing vendored modules.
 VENDOR_PACKAGES: Final = ["packages", "vendor", "vendored", "_vendor", "_vendored_packages"]
 
@@ -587,10 +607,16 @@ class ASTStubGenerator(BaseStubGenerator, mypy.traverser.TraverserVisitor):
 
     def _get_func_docstring(self, node: FuncDef) -> str | None:
         if not node.body.body:
+            get_func_docstring_branchs["empty_body_return_none"] = True
             return None
+        else:
+            get_func_docstring_branchs["non_empty_body_check_expr"] = True
         expr = node.body.body[0]
         if isinstance(expr, ExpressionStmt) and isinstance(expr.expr, StrExpr):
+            get_func_docstring_branchs["expr_is_docstring_return_value"] = True
             return expr.expr.value
+        else:
+            get_func_docstring_branchs["expr_not_docstring_return_none"] = True
         return None
 
     def visit_func_def(self, o: FuncDef) -> None:
