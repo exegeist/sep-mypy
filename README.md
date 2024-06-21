@@ -20,13 +20,15 @@ Tool: Pytest-cov which uses coverage.py under the hood (it says coverage.py v7.3
 
 Command: python -m pytest -q --cov mypy --cov-config .coveragerc --cov-report=term-missing --cov-report=html
 
+![.coveragerc](coveragerc.png)
+
 <Show the coverage results provided by the existing tool with a screenshot>
 
-![Screenshot 1](cov-before-ss1.png)
-![Screenshot 2](cov-before-ss2.png)
-![Screenshot 3](cov-before-ss3.png)
-![Screenshot 4](cov-before-ss4.png)
-![Screenshot 5](cov-before-ss5.png)
+![Before Screenshot 1](cov-before-ss1.png)
+![Before Screenshot 2](cov-before-ss2.png)
+![Before Screenshot 3](cov-before-ss3.png)
+![Before Screenshot 4](cov-before-ss4.png)
+![Before Screenshot 5](cov-before-ss5.png)
 
 ### Your own coverage tool
 
@@ -231,15 +233,34 @@ https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-w
 
 Command to run: python -m pytest -q --cov mypy --cov-config .coveragerc --cov-report=term-missing --cov-report=html
 
+![.coveragerc](coveragerc.png)
+
+#### Before:
+
+![Before Screenshot 1](cov-before-ss1.png)
+![Before Screenshot 2](cov-before-ss2.png)
+![Before Screenshot 3](cov-before-ss3.png)
+![Before Screenshot 4](cov-before-ss4.png)
+![Before Screenshot 5](cov-before-ss5.png)
+
+#### After:
+
+![After Screenshot 1](cov-after-ss1.png)
+![After Screenshot 2](cov-after-ss2.png)
+![After Screenshot 3](cov-after-ss3.png)
+![After Screenshot 4](cov-after-ss4.png)
+![After Screenshot 5](cov-after-ss5.png)
+
 ## Statement of individual contributions
 
 <Write what each group member did>
 
 #### Shane Prent (Goose-9 on Github):
 - Created pretty print and manipulation of the output buffer to allow for the groups coverage tool to be outputted and saved to a file when running tests.
-- Completed project information section in the report as well as completing the full coverage reports seen in this document.
+- Completed project information section in the report, as well as completing the full coverage reports seen in this document.
 - Implemented a coverage tool on 2 different functions with, originally, 0% coverage.
 - Created a test for each of the 2 functions, resulting in a coverage improvement (statement and branch) of 100% over the 2 functions.
+- Completed the relevant sections in the report under the name Shane Prent
 
 #### Justin Prent (JustinPrent on Github):
 - Implemented an original coverage tool on 2 different functions, which originally had 0% coverage. 

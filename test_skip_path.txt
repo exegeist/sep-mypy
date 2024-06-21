@@ -15,6 +15,3 @@ normal_path was hit
 
 Number of branches hit: 6
 Total branch coverage: 100.0%
-
-
-
