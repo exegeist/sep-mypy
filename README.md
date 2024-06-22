@@ -6,23 +6,23 @@ Name: mypy
 
 URL: https://github.com/python/mypy
 
-Number of lines of code and the tool used to count it: 86.419 KLOC counted using lizard
-
 Programming language: Python
+
+Lines of code: 86,419 KLOC (counted with lizard)
 
 ## Coverage measurement
 
 ### Existing tool
 
-<Inform the name of the existing tool that was executed and how it was executed>
+The project already had an existing tool integrated already: [pytest-cov](https://github.com/pytest-dev/pytest-cov), with [coverage.py](https://github.com/nedbat/coveragepy) (v7.3.2) under the hood. We ran the following command to create an initial coverage report:
 
-Tool: Pytest-cov which uses coverage.py under the hood (it says coverage.py v7.3.2 in the screenshot)
-
-Command: python -m pytest -q --cov mypy --cov-config .coveragerc --cov-report=term-missing --cov-report=html
+```
+python -m pytest -q --cov mypy --cov-config .coveragerc --cov-report=term-missing --cov-report=html
+```
 
 ![.coveragerc](coveragerc.png)
 
-<Show the coverage results provided by the existing tool with a screenshot>
+The initial results:
 
 ![Before Screenshot 1](cov-before-ss1.png)
 ![Before Screenshot 2](cov-before-ss2.png)
@@ -30,30 +30,11 @@ Command: python -m pytest -q --cov mypy --cov-config .coveragerc --cov-report=te
 ![Before Screenshot 4](cov-before-ss4.png)
 ![Before Screenshot 5](cov-before-ss5.png)
 
-### Your own coverage tool
-
-<The following is supposed to be repeated for each group member>
-
-<Group member name> 
-
-<Function 1 name> 
-
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
-
-<Provide a screenshot of the coverage results output by the instrumentation>
-
-<Function 2 name>
-
-<Provide the same kind of information provided for Function 1>
-
-
-
+### Our own coverage tool
 
 #### Shane Prent (Goose-9 on Github)
 
-<!--Function 1-->
-
-`visit_deleted_type()` in `mypy/meet.py`
+Function 1: `visit_deleted_type()` in `mypy/meet.py`
 
 Coverage tool implemented in `mypy/meet_with_coverage.py` as it allowed for a better printing system and code organisation. The function `visit_deleted_type()` in `meet_with_coverage.py` is a copy/overridden version of the same function in `mypy/meet.py`
 
@@ -63,9 +44,7 @@ Coverage results output can also be seen in [test_visit_deleted_output.txt](test
 
 !["Output txt file when running visit_deleted_type()](visit_deleted_type_output.png)
 
-<!--Function 2-->
-
-`visit_type_var_tuple()` in `mypy/meet.py`
+Function 2: `visit_type_var_tuple()` in `mypy/meet.py`
 
 Coverage tool implemented in `mypy/meet_with_coverage.py` as it again allowed for a better printing system and code organisation. The function `visit_type_var_tuple()` in `meet_with_coverage.py` is a copy/overridden version of the same function in `mypy/meet.py`
 
@@ -75,17 +54,14 @@ Coverage results output can also be seen in [test_visit_var_tuple_output.txt](te
 
 !["Output txt file when running visit_type_var_tuple_output()](visit_type_var_tuple_output.png)
 
-
-
 #### Justin Prent (JustinPrent on Github)
 
-`get_line_rate()` in `mypy/report.py`
+Function 1: `get_line_rate()` in `mypy/report.py`
 
 The link below shows the comparison between my working branch and the original master branch. It also includes the pretty print used to create the coverage output:
 
-NB! Only lines 130-158 of mypy/report.py are relevant to this function.   
+N.B. Only lines 130-158 of mypy/report.py are relevant to this function.   
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
-
 
 Coverage results output can be seen in [test_line_rate.txt](test_line_rate.txt)
 
@@ -93,12 +69,11 @@ Coverage results output can be seen in [test_line_rate.txt](test_line_rate.txt)
 
 ![Output of .txt file created when running test_line_rate.py](test_line_rate_output_photo.png)
 
-
-`should_skip_path()` in `mypy/report.py`
+Function 2: `should_skip_path()` in `mypy/report.py`
 
 The link below shows the comparison between my working branch and the original master branch. It is the same link given in the function above:
 
-NB! Only lines 595-620 of `mypy/report.py` are relevant to this function.     
+N.B. Only lines 595-620 of `mypy/report.py` are relevant to this function.     
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
 
 Coverage results output can be seen in [test_skip_path.txt](test_skip_path.txt)
@@ -107,23 +82,20 @@ Coverage results output can be seen in [test_skip_path.txt](test_skip_path.txt)
 
 ![Output of .txt file created when running test_skip_path.py](test_skip_path_output_photo.png)
 
-
 #### Martin Oltmann (exegeist on Github)
 
-`str_or_array_as_list()` in `mypy/config_parser.py`
+Function 1: `str_or_array_as_list()` in `mypy/config_parser.py`
 
 Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
-
 
 Coverage results output can be seen in [test_str_or_array_as_list.txt](test_str_or_array_as_list.txt):
 
 *Results of Test:*
 
-![Output of .txt file created when running test_str_or_array_as_list.py](test_str_or_array_as_list_output.png)
+![Output .txt file created by test_str_or_array_as_list.py](test_str_or_array_as_list_output.png)
 
-
-`convert_to_boolean()` in `mypy/config_parser.py`
+Function 2: `convert_to_boolean()` in `mypy/config_parser.py`
 
 Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
@@ -132,7 +104,32 @@ Coverage results output can be seen in [test_convert_to_boolean.txt](test_conver
 
 *Results of Test:*
 
-![Output of .txt file created when running test_convert_to_boolean.py](test_convert_to_boolean_output.png)
+![Output .txt file created by test_convert_to_boolean.py](test_convert_to_boolean_output.png)
+
+#### Luciano Cricket (Luciman848484 on Github)
+
+Function 1: `function()` in `mypy/file.py`
+
+Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Luciano's-branch
+
+Coverage results output can be seen in [test_function.txt](test_function.txt):
+
+*Results of Test:*
+
+![Output .txt file created by test_function.py](test_function_output.png)
+
+Function 2: `function()` in `mypy/file.py`
+
+Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Luciano's-branch
+
+Coverage results output can be seen in [test_function.txt](test_function.txt):
+
+*Results of Test:*
+
+![Output .txt file created by test_function.py](test_function.png)
+
 
 
 ## Coverage improvement
