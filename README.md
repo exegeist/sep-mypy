@@ -241,7 +241,9 @@ Old coverage results for `str_or_array_as_list()`:
 
 New coverage results for `str_or_array_as_list()`:
 
-//TODO add screenshot of new coverage and explanation
+*Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
+
+![New coverage results for str_or_array_as_list()](cov-new-str_or_array_as_list.png)
 
 Test 2: [mypy/test/test_config_parser.py](mypy/test/test_config_parser.py)
 
@@ -250,11 +252,17 @@ New test created to test the function `convert_to_boolean()` in `mypy/config_par
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
 
 Old coverage results for `convert_to_boolean()`:
-*Coverage is 0% for statement and branch coverage*
+
+*Coverage is very low for statement and branch coverage*
 
 ![Old coverage results for convert_to_boolean()](cov-old-convert_to_boolean.png)
 
 New coverage results for `convert_to_boolean()`:
+
+*Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
+
+![New coverage results for convert_to_boolean()](cov-new-convert_to_boolean.png)
+
 
 ### Overall
 
