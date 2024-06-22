@@ -122,8 +122,6 @@ Coverage results can be seen in [test_function.txt](test_function.txt):
 
 ![Output .txt file created by test_function.py](test_function.png)
 
-
-
 ## Coverage improvement
 
 ### Individual tests
@@ -146,25 +144,21 @@ Coverage results can be seen in [test_function.txt](test_function.txt):
 
 <Provide the same kind of information provided for Test 1>
 
-
-
 #### Shane Prent (Goose-9 on Github)
 
-<!--Test 1-->
+Test 1: [mypy/test/test_visit_deleted.py](mypy/test/test_visit_deleted.py)
 
-Test file name: [mypy/test/test_visit_deleted.py](mypy/test/test_visit_deleted.py)
-
-New test created to test the function visit_deleted_type in meet_with_coverage.py.
+New test created to test the function `visit_deleted_type()` in `meet_with_coverage.py`.
 
 https://github.com/python/mypy/commit/ea6ae9075c7a9d5a4eec15020409b64eba4a3fa1
 
-Old coverage results for visit_deleted_type(): 
+Old coverage results for `visit_deleted_type()`: 
 
 ![Old coverage results for visit_deleted_type()](cov-old-visit_deleted_type.png)
 
 *Coverage is 0% for statement and branch coverage*
 
-New coverage results for visit_deleted_type(): 
+New coverage results for `visit_deleted_type()`: 
 
 ![Old coverage results for visit_deleted_type()](cov-new-visit_deleted_type.png)
 
@@ -172,21 +166,19 @@ New coverage results for visit_deleted_type():
 
 The total coverage improvement is 100%, as both the statement and branch coverage increased from 0% in the original function to 100% after the test was added. The coverage increased as the test caused all the different branches in the main function to run and checks the output of the function to make sure it is correct. As every statement is run in the function, the statement coverage is 100% and likewise, since all the branches are accounted for and run, the branch coverage is also 100%.
 
-<!--Test 2-->
+Test 2: [mypy/test/test_visit_var_tuple.py](mypy/test/test_visit_var_tuple.py)
 
-Test file name: [mypy/test/test_visit_var_tuple.py](mypy/test/test_visit_var_tuple.py)
-
-New test created to test the function visit_type_var_tuple in meet_with_coverage.py.
+New test created to test the function `visit_type_var_tuple()` in `meet_with_coverage.py`.
 
 https://github.com/python/mypy/commit/0a938d60da9fc923b9f9e7a67400b72b7c770f30
 
-Old coverage results for visit_type_var_tuple(): 
+Old coverage results for `visit_type_var_tuple()`: 
 
 ![Old coverage results for visit-type-var-tuple()](cov-old-visit-var-tuple.png)
 
 *Coverage is 0% for statement and branch coverage*
 
-New coverage results for visit_type_var_tuple(): 
+New coverage results for `visit_type_var_tuple()`: 
 
 ![New coverage results for visit_type_var_tuple()](cov-new-visit-var-tuple.png)
 
@@ -198,49 +190,71 @@ The total coverage improvement is 100%, as both the statement and branch coverag
 
 ![Total coverage for meet_with_coverage.py](cov-total-meet_with_coverage.png)
 
+#### Justin Prent (JustinPrent on Github)
 
-### Justin Prent (JustinPrent on Github)
+Test 1: [mypy/test/test_line_rate.py](mypy/test/test_line_rate.py)
 
-<Test 1>
+New test created to test the function `get_line_rate()` in `mypy/report.py`.
 
-Test file name: [mypy/test/test_line_rate.py](mypy/test/test_line_rate.py)
-
-New test created to test the function get_line_rate() in mypy/report.py.
-
-NB! Only the file "mypy/test/test_line_rate.py" is relevant to this section.  
+NB! Only the file `mypy/test/test_line_rate.py` is relevant to this section.  
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working 
 
+Old coverage results for `get_line_rate()`:
 
-
-#### Old coverage results for get_line_rate():  
 *Coverage is 0% for statement and branch coverage*
 
 ![Old coverage results for get_line_rate()](cov-old-line-rate.png)
 
-
-#### New coverage results for get_line_rate(): 
+New coverage results for `get_line_rate()`: 
 
 //TODO add screenshot of new coverage and explanation
 
+Test 2: [mypy/test/test_skip_path.py](mypy/test/test_skip_path.py)
 
-<Test 2>
+New test created to test the function `should_skip_path()` in `mypy/report.py`.
 
-Test file name: [mypy/test/test_skip_path.py](mypy/test/test_skip_path.py)
-
-New test created to test the function should_skip_path() in mypy/report.py.
-
-NB! Only the file "mypy/test/test_skip_path.py" is relevant to this section.  
+N.B. Only the file `mypy/test/test_skip_path.py` is relevant to this section.  
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working 
 
-
-#### Old coverage results for should_skip_path():  
+Old coverage results for `should_skip_path()`:  
 *Coverage is 0% for statement and branch coverage*
 
 ![Old coverage results for should_skip_path()](cov-old-skip-path.png)
 
-#### New coverage results for should_skip_path(): 
+New coverage results for `should_skip_path()`: 
 
 //TODO add screenshot of new coverage and explanation
+
+#### Martin Oltmann (exegeist on Github)
+
+Test 1: [mypy/test/test_config_parser.py](mypy/test/test_config_parser.py)
+
+New test created to test the function `str_or_array_as_list()` in `mypy/config_parser.py`.
+
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working 
+
+Old coverage results for `str_or_array_as_list()`:
+
+*Coverage is 0% for statement and branch coverage*
+
+![Old coverage results for str_or_array_as_list()](cov-str_or_array_as_list.png)
+
+New coverage results for `str_or_array_as_list()`: 
+
+//TODO add screenshot of new coverage and explanation
+
+Test 2: [mypy/test/test_config_parser.py](mypy/test/test_config_parser.py)
+
+New test created to test the function `convert_to_boolean()` in `mypy/config_parser.py`.
+
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working 
+
+Old coverage results for `convert_to_boolean()`:  
+*Coverage is 0% for statement and branch coverage*
+
+![Old coverage results for convert_to_boolean()](cov-convert_to_boolean.png)
+
+New coverage results for `convert_to_boolean()`: 
 
 ### Overall
 
