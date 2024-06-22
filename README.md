@@ -107,6 +107,34 @@ Coverage results output can be seen in [test_skip_path.txt](test_skip_path.txt)
 
 ![Output of .txt file created when running test_skip_path.py](test_skip_path_output_photo.png)
 
+
+#### Martin Oltmann (exegeist on Github)
+
+`str_or_array_as_list()` in mypy/config_parser.py
+
+Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
+
+
+Coverage results output can be seen in [test_str_or_array_as_list.txt](test_str_or_array_as_list.txt):
+
+*Results of Test:*
+
+![Output of .txt file created when running test_str_or_array_as_list.py](test_str_or_array_as_list_output.png)
+
+
+`convert_to_boolean()` in mypy/config_parser.py
+
+Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
+
+Coverage results output can be seen in [test_convert_to_boolean.txt](test_convert_to_boolean.txt):
+
+*Results of Test:*
+
+![Output of .txt file created when running test_convert_to_boolean.py](test_convert_to_boolean_output.png)
+
+
 ## Coverage improvement
 
 ### Individual tests
