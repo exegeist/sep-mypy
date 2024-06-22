@@ -8,7 +8,7 @@ URL: https://github.com/python/mypy
 
 Programming language: Python
 
-Lines of code: 86,419 KLOC (counted with lizard)
+Lines of code: 86,419 (counted with lizard)
 
 ## Coverage measurement
 
