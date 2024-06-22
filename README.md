@@ -53,9 +53,9 @@ Command: python -m pytest -q --cov mypy --cov-config .coveragerc --cov-report=te
 
 <!--Function 1-->
 
-visit_deleted_type() in mypy/meet.py
+`visit_deleted_type()` in `mypy/meet.py`
 
-Coverage tool implemented in mypy/meet_with_coverage.py as it allowed for a better printing system and code organisation. The function visit_deleted_type() in meet_with_coverage.py is a copy/overridden version of the same function in mypy/meet.py
+Coverage tool implemented in `mypy/meet_with_coverage.py` as it allowed for a better printing system and code organisation. The function `visit_deleted_type()` in `meet_with_coverage.py` is a copy/overridden version of the same function in `mypy/meet.py`
 
 https://github.com/python/mypy/commit/e63f6189d20e5663f18001252845db82c6a6c875
 
@@ -65,9 +65,9 @@ Coverage results output can also be seen in [test_visit_deleted_output.txt](test
 
 <!--Function 2-->
 
-visit_type_var_tuple() in mypy/meet.py
+`visit_type_var_tuple()` in `mypy/meet.py`
 
-Coverage tool implemented in mypy/meet_with_coverage.py as it again allowed for a better printing system and code organisation. The function visit_type_var_tuple() in meet_with_coverage.py is a copy/overridden version of the same function in mypy/meet.py
+Coverage tool implemented in `mypy/meet_with_coverage.py` as it again allowed for a better printing system and code organisation. The function `visit_type_var_tuple()` in `meet_with_coverage.py` is a copy/overridden version of the same function in `mypy/meet.py`
 
 https://github.com/python/mypy/commit/e63f6189d20e5663f18001252845db82c6a6c875
 
@@ -79,7 +79,7 @@ Coverage results output can also be seen in [test_visit_var_tuple_output.txt](te
 
 #### Justin Prent (JustinPrent on Github)
 
-<get_line_rate()> in mypy/report.py
+`get_line_rate()` in `mypy/report.py`
 
 The link below shows the comparison between my working branch and the original master branch. It also includes the pretty print used to create the coverage output:
 
@@ -94,11 +94,11 @@ Coverage results output can be seen in [test_line_rate.txt](test_line_rate.txt)
 ![Output of .txt file created when running test_line_rate.py](test_line_rate_output_photo.png)
 
 
-<should_skip_path()> in mypy/report.py
+`should_skip_path()` in `mypy/report.py`
 
 The link below shows the comparison between my working branch and the original master branch. It is the same link given in the function above:
 
-NB! Only lines 595-620 of mypy/report.py are relevant to this function.     
+NB! Only lines 595-620 of `mypy/report.py` are relevant to this function.     
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
 
 Coverage results output can be seen in [test_skip_path.txt](test_skip_path.txt)
@@ -110,7 +110,7 @@ Coverage results output can be seen in [test_skip_path.txt](test_skip_path.txt)
 
 #### Martin Oltmann (exegeist on Github)
 
-`str_or_array_as_list()` in mypy/config_parser.py
+`str_or_array_as_list()` in `mypy/config_parser.py`
 
 Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
@@ -123,7 +123,7 @@ Coverage results output can be seen in [test_str_or_array_as_list.txt](test_str_
 ![Output of .txt file created when running test_str_or_array_as_list.py](test_str_or_array_as_list_output.png)
 
 
-`convert_to_boolean()` in mypy/config_parser.py
+`convert_to_boolean()` in `mypy/config_parser.py`
 
 Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
