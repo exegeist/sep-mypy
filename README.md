@@ -40,9 +40,9 @@ Coverage tool implemented in `mypy/meet_with_coverage.py` as it allowed for a be
 
 https://github.com/python/mypy/commit/e63f6189d20e5663f18001252845db82c6a6c875
 
-Coverage results output can also be seen in [test_visit_deleted_output.txt](test_visit_deleted_output.txt)
+Coverage results output can also be seen in [test_visit_deleted_output.txt](test_visit_deleted_output.txt):
 
-!["Output txt file when running visit_deleted_type()](visit_deleted_type_output.png)
+!["Output txt file created by visit_deleted_type()](visit_deleted_type_output.png)
 
 Function 2: `visit_type_var_tuple()` in `mypy/meet.py`
 
@@ -50,9 +50,9 @@ Coverage tool implemented in `mypy/meet_with_coverage.py` as it again allowed fo
 
 https://github.com/python/mypy/commit/e63f6189d20e5663f18001252845db82c6a6c875
 
-Coverage results output can also be seen in [test_visit_var_tuple_output.txt](test_visit_var_tuple_output.txt)
+Coverage results can be seen in [test_visit_var_tuple_output.txt](test_visit_var_tuple_output.txt):
 
-!["Output txt file when running visit_type_var_tuple_output()](visit_type_var_tuple_output.png)
+!["Output .txt file created by visit_type_var_tuple_output()](visit_type_var_tuple_output.png)
 
 #### Justin Prent (JustinPrent on Github)
 
@@ -63,11 +63,9 @@ The link below shows the comparison between my working branch and the original m
 N.B. Only lines 130-158 of `mypy/report.py` are relevant to this function.   
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
 
-Coverage results output can be seen in [test_line_rate.txt](test_line_rate.txt)
+Coverage results can be seen in [test_line_rate.txt](test_line_rate.txt):
 
-*Results of Test:*
-
-![Output of .txt file created when running test_line_rate.py](test_line_rate_output_photo.png)
+![Output .txt file created by test_line_rate.py](test_line_rate_output_photo.png)
 
 Function 2: `should_skip_path()` in `mypy/report.py`
 
@@ -76,33 +74,29 @@ The link below shows the comparison between my working branch and the original m
 N.B. Only lines 595-620 of `mypy/report.py` are relevant to this function.     
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
 
-Coverage results output can be seen in [test_skip_path.txt](test_skip_path.txt)
+Coverage results can be seen in [test_skip_path.txt](test_skip_path.txt):
 
-*Results of Test:*
-
-![Output of .txt file created when running test_skip_path.py](test_skip_path_output_photo.png)
+![Output .txt file created by test_skip_path.py](test_skip_path_output_photo.png)
 
 #### Martin Oltmann (exegeist on Github)
 
 Function 1: `str_or_array_as_list()` in `mypy/config_parser.py`
 
 Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
+
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
 
-Coverage results output can be seen in [test_str_or_array_as_list.txt](test_str_or_array_as_list.txt):
-
-*Results of Test:*
+Coverage results can be seen in [test_str_or_array_as_list.txt](test_str_or_array_as_list.txt):
 
 ![Output .txt file created by test_str_or_array_as_list.py](test_str_or_array_as_list_output.png)
 
 Function 2: `convert_to_boolean()` in `mypy/config_parser.py`
 
 Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
+
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
 
-Coverage results output can be seen in [test_convert_to_boolean.txt](test_convert_to_boolean.txt):
-
-*Results of Test:*
+Coverage results can be seen in [test_convert_to_boolean.txt](test_convert_to_boolean.txt):
 
 ![Output .txt file created by test_convert_to_boolean.py](test_convert_to_boolean_output.png)
 
@@ -111,22 +105,20 @@ Coverage results output can be seen in [test_convert_to_boolean.txt](test_conver
 Function 1: `function()` in `mypy/file.py`
 
 Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
+
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Luciano's-branch
 
-Coverage results output can be seen in [test_function.txt](test_function.txt):
-
-*Results of Test:*
+Coverage results can be seen in [test_function.txt](test_function.txt):
 
 ![Output .txt file created by test_function.py](test_function_output.png)
 
 Function 2: `function()` in `mypy/file.py`
 
 Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
+
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Luciano's-branch
 
-Coverage results output can be seen in [test_function.txt](test_function.txt):
-
-*Results of Test:*
+Coverage results can be seen in [test_function.txt](test_function.txt):
 
 ![Output .txt file created by test_function.py](test_function.png)
 
