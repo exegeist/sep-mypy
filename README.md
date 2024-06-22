@@ -60,7 +60,7 @@ Function 1: `get_line_rate()` in `mypy/report.py`
 
 The link below shows the comparison between my working branch and the original master branch. It also includes the pretty print used to create the coverage output:
 
-N.B. Only lines 130-158 of mypy/report.py are relevant to this function.   
+N.B. Only lines 130-158 of `mypy/report.py` are relevant to this function.   
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
 
 Coverage results output can be seen in [test_line_rate.txt](test_line_rate.txt)
