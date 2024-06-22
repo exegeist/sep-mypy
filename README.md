@@ -60,7 +60,7 @@ Function 1: `get_line_rate()` in `mypy/report.py`
 
 The link below shows the comparison between my working branch and the original master branch. It also includes the pretty print used to create the coverage output:
 
-N.B. Only lines 130-158 of `mypy/report.py` are relevant to this function.   
+N.B. Only lines 130-158 of `mypy/report.py` are relevant to this function.
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
 
 Coverage results can be seen in [test_line_rate.txt](test_line_rate.txt):
@@ -71,7 +71,7 @@ Function 2: `should_skip_path()` in `mypy/report.py`
 
 The link below shows the comparison between my working branch and the original master branch. It is the same link given in the function above:
 
-N.B. Only lines 595-620 of `mypy/report.py` are relevant to this function.     
+N.B. Only lines 595-620 of `mypy/report.py` are relevant to this function.
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
 
 Coverage results can be seen in [test_skip_path.txt](test_skip_path.txt):
@@ -152,13 +152,13 @@ New test created to test the function `visit_deleted_type()` in `meet_with_cover
 
 https://github.com/python/mypy/commit/ea6ae9075c7a9d5a4eec15020409b64eba4a3fa1
 
-Old coverage results for `visit_deleted_type()`: 
+Old coverage results for `visit_deleted_type()`:
 
 ![Old coverage results for visit_deleted_type()](cov-old-visit_deleted_type.png)
 
 *Coverage is 0% for statement and branch coverage*
 
-New coverage results for `visit_deleted_type()`: 
+New coverage results for `visit_deleted_type()`:
 
 ![Old coverage results for visit_deleted_type()](cov-new-visit_deleted_type.png)
 
@@ -172,13 +172,13 @@ New test created to test the function `visit_type_var_tuple()` in `meet_with_cov
 
 https://github.com/python/mypy/commit/0a938d60da9fc923b9f9e7a67400b72b7c770f30
 
-Old coverage results for `visit_type_var_tuple()`: 
+Old coverage results for `visit_type_var_tuple()`:
 
 ![Old coverage results for visit-type-var-tuple()](cov-old-visit-var-tuple.png)
 
 *Coverage is 0% for statement and branch coverage*
 
-New coverage results for `visit_type_var_tuple()`: 
+New coverage results for `visit_type_var_tuple()`:
 
 ![New coverage results for visit_type_var_tuple()](cov-new-visit-var-tuple.png)
 
@@ -196,8 +196,8 @@ Test 1: [mypy/test/test_line_rate.py](mypy/test/test_line_rate.py)
 
 New test created to test the function `get_line_rate()` in `mypy/report.py`.
 
-NB! Only the file `mypy/test/test_line_rate.py` is relevant to this section.  
-https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working 
+NB! Only the file `mypy/test/test_line_rate.py` is relevant to this section.
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
 
 Old coverage results for `get_line_rate()`:
 
@@ -205,7 +205,7 @@ Old coverage results for `get_line_rate()`:
 
 ![Old coverage results for get_line_rate()](cov-old-line-rate.png)
 
-New coverage results for `get_line_rate()`: 
+New coverage results for `get_line_rate()`:
 
 //TODO add screenshot of new coverage and explanation
 
@@ -213,15 +213,15 @@ Test 2: [mypy/test/test_skip_path.py](mypy/test/test_skip_path.py)
 
 New test created to test the function `should_skip_path()` in `mypy/report.py`.
 
-N.B. Only the file `mypy/test/test_skip_path.py` is relevant to this section.  
-https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working 
+N.B. Only the file `mypy/test/test_skip_path.py` is relevant to this section.
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
 
-Old coverage results for `should_skip_path()`:  
+Old coverage results for `should_skip_path()`:
 *Coverage is 0% for statement and branch coverage*
 
 ![Old coverage results for should_skip_path()](cov-old-skip-path.png)
 
-New coverage results for `should_skip_path()`: 
+New coverage results for `should_skip_path()`:
 
 //TODO add screenshot of new coverage and explanation
 
@@ -231,15 +231,15 @@ Test 1: [mypy/test/test_config_parser.py](mypy/test/test_config_parser.py)
 
 New test created to test the function `str_or_array_as_list()` in `mypy/config_parser.py`.
 
-https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working 
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
 
 Old coverage results for `str_or_array_as_list()`:
 
 *Coverage is 0% for statement and branch coverage*
 
-![Old coverage results for str_or_array_as_list()](cov-str_or_array_as_list.png)
+![Old coverage results for str_or_array_as_list()](cov-old-str_or_array_as_list.png)
 
-New coverage results for `str_or_array_as_list()`: 
+New coverage results for `str_or_array_as_list()`:
 
 //TODO add screenshot of new coverage and explanation
 
@@ -247,14 +247,14 @@ Test 2: [mypy/test/test_config_parser.py](mypy/test/test_config_parser.py)
 
 New test created to test the function `convert_to_boolean()` in `mypy/config_parser.py`.
 
-https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working 
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
 
-Old coverage results for `convert_to_boolean()`:  
+Old coverage results for `convert_to_boolean()`:
 *Coverage is 0% for statement and branch coverage*
 
-![Old coverage results for convert_to_boolean()](cov-convert_to_boolean.png)
+![Old coverage results for convert_to_boolean()](cov-old-convert_to_boolean.png)
 
-New coverage results for `convert_to_boolean()`: 
+New coverage results for `convert_to_boolean()`:
 
 ### Overall
 
@@ -294,6 +294,6 @@ Command to run: python -m pytest -q --cov mypy --cov-config .coveragerc --cov-re
 - Completed the relevant sections in the report under the name Shane Prent
 
 #### Justin Prent (JustinPrent on Github):
-- Implemented an original coverage tool on 2 different functions, which originally had 0% coverage. 
+- Implemented an original coverage tool on 2 different functions, which originally had 0% coverage.
 - Created a test for each of the 2 functions, ensuring coverage over every branch and statement, while also testing the logic of each function further to ensure correctness. This resulted in a coverage of 100% over the 2 functions.
 - Completed the relevant sections in the report under the name Justin Prent.
