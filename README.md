@@ -270,7 +270,9 @@ New coverage results for `convert_to_boolean()`:
 
 <Provide a screenshot of the new coverage results by running the existing tool using all test modifications made by the group>
 
-Command to run: python -m pytest -q --cov mypy --cov-config .coveragerc --cov-report=term-missing --cov-report=html
+Command used:
+
+```python -m pytest -q --cov mypy --cov-config .coveragerc --cov-report=term-missing --cov-report=html```
 
 ![.coveragerc](coveragerc.png)
 
@@ -305,3 +307,9 @@ Command to run: python -m pytest -q --cov mypy --cov-config .coveragerc --cov-re
 - Implemented an original coverage tool on 2 different functions, which originally had 0% coverage.
 - Created a test for each of the 2 functions, ensuring coverage over every branch and statement, while also testing the logic of each function further to ensure correctness. This resulted in a coverage of 100% over the 2 functions.
 - Completed the relevant sections in the report under the name Justin Prent.
+
+#### Martin Oltmann (exegeist on Github):
+- Created the forked repository along with the WhatsApp and Discord group chats.
+- Implemented through instrumentation an original coverage tool on 2 functions which originally had 0% coverage.
+- Created unit tests for each of the 2 functions, ensuring coverage over every branch and statement, while simultaneously testing the logic of each function further to ensure correctness, resulting in a 100% coverage over the 2 functions.
+- Completed the relevant sections in the report under the name Martin Oltmann.
