@@ -32,7 +32,7 @@ The initial results:
 
 ### Our own coverage tool
 
-#### Shane Prent (Goose-9 on Github)
+#### Shane Prent (Goose-9 on GitHub)
 
 Function 1: `visit_deleted_type()` in `mypy/meet.py`
 
@@ -54,7 +54,7 @@ Coverage results can be seen in [test_visit_var_tuple_output.txt](test_visit_var
 
 !["Output .txt file created by visit_type_var_tuple_output()](visit_type_var_tuple_output.png)
 
-#### Justin Prent (JustinPrent on Github)
+#### Justin Prent (JustinPrent on GitHub)
 
 Function 1: `get_line_rate()` in `mypy/report.py`
 
@@ -78,7 +78,7 @@ Coverage results can be seen in [test_skip_path.txt](test_skip_path.txt):
 
 ![Output .txt file created by test_skip_path.py](test_skip_path_output_photo.png)
 
-#### Martin Oltmann (exegeist on Github)
+#### Martin Oltmann (exegeist on GitHub)
 
 Function 1: `str_or_array_as_list()` in `mypy/config_parser.py`
 
@@ -100,7 +100,7 @@ Coverage results can be seen in [test_convert_to_boolean.txt](test_convert_to_bo
 
 ![Output .txt file created by test_convert_to_boolean.py](test_convert_to_boolean_output.png)
 
-#### Luciano Monteiro (Luciman848484 on Github)
+#### Luciano Monteiro (Luciman848484 on GitHub)
 
 Function 1: `get_original_any()` in `mypy/stats.py`
 
@@ -126,7 +126,7 @@ Coverage results can be seen in [test_get_func_docstring.txt](test_get_func_docs
 
 ### Individual tests
 
-#### Shane Prent (Goose-9 on Github)
+#### Shane Prent (Goose-9 on GitHub)
 
 Test 1: [mypy/test/test_visit_deleted.py](mypy/test/test_visit_deleted.py)
 
@@ -172,7 +172,7 @@ The total coverage improvement is 100%, as both the statement and branch coverag
 
 ![Total coverage for meet_with_coverage.py](cov-total-meet_with_coverage.png)
 
-#### Justin Prent (JustinPrent on Github)
+#### Justin Prent (JustinPrent on GitHub)
 
 Test 1: [mypy/test/test_line_rate.py](mypy/test/test_line_rate.py)
 
@@ -193,7 +193,7 @@ New coverage results for `get_line_rate()`:
 
 *Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
 
-The total coverage for the function get_line_rate() increased from 0% in the original function to 100% after the tests were added. The coverage increased as the new created test caused all the different branches in the function to be run and checks that the output is correct. Therefore as every statement is run in the function, the statement coverage is 100% and since all other branches are accounted for and run, the branch coverage is also 100%. Since we added more lines to the actual function, the final coverage for the whole file will be affected by these extra statements and "pretty-print" functions, but it should not affect the  coverage drastically. 
+The total coverage for the function get_line_rate() increased from 0% in the original function to 100% after the tests were added. The coverage increased as the new created test caused all the different branches in the function to be run and checks that the output is correct. Therefore as every statement is run in the function, the statement coverage is 100% and since all other branches are accounted for and run, the branch coverage is also 100%. Since we added more lines to the actual function, the final coverage for the whole file will be affected by these extra statements and "pretty-print" functions, but it should not affect the  coverage drastically.
 
 NB! The final difference in the coverage over the whole file mypy/report.py is given below both tests!
 
@@ -215,7 +215,7 @@ New coverage results for `should_skip_path()`:
 
 ![New coverage results for should_skip_path()](cov-new-skip-path.png)
 
-The total coverage for the function should_skip_path() increased from 0% in the original function to 100% after the tests were added. The coverage increased as the new created test caused all the different branches in the function to be run and checks that the output is correct. Therefore as every statement is run in the function, the statement coverage is 100% and since all other branches are accounted for and run, the branch coverage is also 100%. Since we added more lines to the actual function, the final coverage for the whole file will be affected by these extra statements and "pretty-print" functions, but it should not affect the  coverage drastically. 
+The total coverage for the function should_skip_path() increased from 0% in the original function to 100% after the tests were added. The coverage increased as the new created test caused all the different branches in the function to be run and checks that the output is correct. Therefore as every statement is run in the function, the statement coverage is 100% and since all other branches are accounted for and run, the branch coverage is also 100%. Since we added more lines to the actual function, the final coverage for the whole file will be affected by these extra statements and "pretty-print" functions, but it should not affect the  coverage drastically.
 
 *Final coverage before and after for mypy/report.py:*
 
@@ -224,9 +224,9 @@ Before:
 After:
 ![Report.py coverage after](cov-report-after.png)
 
-NB! This 5% increase in coverage is affected by the newly added statements to the functions and relevant "pretty-print" functions that were added to the file.  
+NB! This 5% increase in coverage is affected by the newly added statements to the functions and relevant "pretty-print" functions that were added to the file.
 
-#### Martin Oltmann (exegeist on Github)
+#### Martin Oltmann (exegeist on GitHub)
 
 Test 1: [mypy/test/test_config_parser.py](mypy/test/test_config_parser.py)
 
@@ -265,7 +265,7 @@ New coverage results for `convert_to_boolean()`:
 ![New coverage results for convert_to_boolean()](cov-new-convert_to_boolean.png)
 
 
-#### Luciano Monteiro (Luciman8484 on Github)
+#### Luciano Monteiro (Luciman8484 on GitHub)
 
 Test 1: [mypy/test/test_get_original_any.py](mypy/test/test_get_original_any.py)
 
@@ -330,25 +330,25 @@ Command used:
 
 ## Statement of individual contributions
 
-#### Shane Prent (Goose-9 on Github):
+#### Shane Prent (Goose-9 on GitHub):
 - Created pretty print and manipulation of the output buffer to allow for the groups coverage tool to be outputted and saved to a file when running tests.
 - Completed project information section in the report, as well as completing the full coverage reports seen in this document.
 - Implemented a coverage tool on 2 different functions with, originally, 0% coverage.
 - Created a test for each of the 2 functions, resulting in a coverage improvement (statement and branch) of 100% over the 2 functions.
 - Completed the relevant sections in the report under the name Shane Prent
 
-#### Justin Prent (JustinPrent on Github):
+#### Justin Prent (JustinPrent on GitHub):
 - Implemented an original coverage tool on 2 different functions, which originally had 0% coverage.
 - Created a test for each of the 2 functions, ensuring coverage over every branch and statement, while also testing the logic of each function further to ensure correctness. This resulted in a coverage of 100% over the 2 functions.
 - Completed the relevant sections in the report under the name Justin Prent.
 
-#### Martin Oltmann (exegeist on Github):
+#### Martin Oltmann (exegeist on GitHub):
 - Created the forked repository along with the WhatsApp and Discord group chats.
 - Implemented through instrumentation an original coverage tool on 2 functions which originally had 0% coverage.
 - Created unit tests for each of the 2 functions, ensuring coverage over every branch and statement, while simultaneously testing the logic of each function further to ensure correctness, resulting in a 100% coverage over the 2 functions.
 - Completed the relevant sections in the report under the name Martin Oltmann.
 
-#### Luciano Monteiro (Luciman8484 on Github):
+#### Luciano Monteiro (Luciman8484 on GitHub):
 - Ran an initial coverage test to identify untested functions
 - Created tests for all branches in each function
 - Added tests for each individual branch, ensuring coverage of every possible outcome
