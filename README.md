@@ -102,25 +102,25 @@ Coverage results can be seen in [test_convert_to_boolean.txt](test_convert_to_bo
 
 #### Luciano Cricket (Luciman848484 on Github)
 
-Function 1: `function()` in `mypy/file.py`
+Function 1: `get_original_any()` in `mypy/stats.py`
 
 Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
 
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Luciano's-branch
 
-Coverage results can be seen in [test_function.txt](test_function.txt):
+Coverage results can be seen in [test_get_original_any_output.txt](test_get_original_any_output.txt):
 
-![Output .txt file created by test_function.py](test_function_output.png)
+![Output .txt file created by mypy/test/test_get_original_any.py](missing png file tell the others.png)
 
-Function 2: `function()` in `mypy/file.py`
+Function 2: `_get_func_docstring()` in `mypy/subgen.py`
 
 Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
 
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Luciano's-branch
 
-Coverage results can be seen in [test_function.txt](test_function.txt):
+Coverage results can be seen in [test_get_func_docstring.txt](test_get_func_docstring.txt):
 
-![Output .txt file created by test_function.py](test_function.png)
+![Output .txt file created by test_get_func_docstring.py.py](missing again .png)
 
 ## Coverage improvement
 
