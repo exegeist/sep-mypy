@@ -100,7 +100,7 @@ Coverage results can be seen in [test_convert_to_boolean.txt](test_convert_to_bo
 
 ![Output .txt file created by test_convert_to_boolean.py](test_convert_to_boolean_output.png)
 
-#### Luciano Cricket (Luciman848484 on Github)
+#### Luciano Monteiro (Luciman848484 on Github)
 
 Function 1: `get_original_any()` in `mypy/stats.py`
 
@@ -110,7 +110,7 @@ https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Luciano'
 
 Coverage results can be seen in [test_get_original_any_output.txt](test_get_original_any_output.txt):
 
-![Output .txt file created by mypy/test/test_get_original_any.py](missing png file tell the others.png)
+![Output .txt file created by test_get_original_any.py](test_get_original_any_output.png)
 
 Function 2: `_get_func_docstring()` in `mypy/subgen.py`
 
@@ -120,7 +120,7 @@ https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Luciano'
 
 Coverage results can be seen in [test_get_func_docstring.txt](test_get_func_docstring.txt):
 
-![Output .txt file created by test_get_func_docstring.py.py](missing again .png)
+![Output .txt file created by test_get_func_docstring.py](test_get_func_docstring.png)
 
 ## Coverage improvement
 
@@ -264,6 +264,45 @@ New coverage results for `convert_to_boolean()`:
 ![New coverage results for convert_to_boolean()](cov-new-convert_to_boolean.png)
 
 
+#### Luciano Monteiro (Luciman8484 on Github)
+
+Test 1: [mypy/test/test_get_original_any.py](mypy/test/test_get_original_any.py)
+
+New test created to test the function `get_original_any()` in `mypy/stats.py`.
+
+//TODO: PLEASE SOMEONE HELP ME ADD THE LINK FOR THE COMMIT
+
+Old coverage results for `get_original_any()`:
+
+*Coverage is 0% for statement and branch coverage*
+
+![Old coverage results for get_original_any()](cov-old-get_original_any.png)
+
+New coverage results for `get_original_any()`:
+
+*Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
+
+![New coverage results for get_original_any()](cov-new-str_or_array_as_list.png) //TODO ADD THE SCREENSHOT
+
+Test 2: [mypy/test/test_get_func_docstring.py](mypy/test/test_get_func_docstring.py)
+
+New test created to test the function `_get_func_docstring()` in `mypy/stubgen.py`.
+
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working //please add commit
+
+Old coverage results for `_get_func_docstring()`:
+
+*Coverage is 0% for statement and branch coverage*
+
+![Old coverage results for _get_func_docstring()](cov-old-_get_func_docstring.png)
+
+New coverage results for `_get_func_docstring()`:
+
+*Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
+
+![New coverage results for _get_func_docstring()](cov-new-convert_to_boolean.png)
+
+
 ### Overall
 
 <Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)>
@@ -313,3 +352,10 @@ Command used:
 - Implemented through instrumentation an original coverage tool on 2 functions which originally had 0% coverage.
 - Created unit tests for each of the 2 functions, ensuring coverage over every branch and statement, while simultaneously testing the logic of each function further to ensure correctness, resulting in a 100% coverage over the 2 functions.
 - Completed the relevant sections in the report under the name Martin Oltmann.
+
+#### Luciano Monteiro (Luciman8484 on Github):
+- Ran an initial coverage test to identify untested functions
+- Created tests for all branches in each function
+- Added tests for each individual branch, ensuring coverage of every possible outcome
+- Compared newly implemented tests with the old coverage to assess improvements
+- Completed the relevant sections in the report under the name Luciano Monteiro.
