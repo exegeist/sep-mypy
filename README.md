@@ -126,24 +126,6 @@ Coverage results can be seen in [test_get_func_docstring.txt](test_get_func_docs
 
 ### Individual tests
 
-<The following is supposed to be repeated for each group member>
-
-<Group member name>
-
-<Test 1>
-
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test>
-
-<Provide a screenshot of the old coverage results (the same as you already showed above)>
-
-< Provide a screenshot of the new coverage results>
-
-< State the coverage improvement with a number and elaborate on why the coverage is improved>
-
-<Test 2>
-
-<Provide the same kind of information provided for Test 1>
-
 #### Shane Prent (Goose-9 on Github)
 
 Test 1: [mypy/test/test_visit_deleted.py](mypy/test/test_visit_deleted.py)
@@ -270,7 +252,7 @@ Test 1: [mypy/test/test_get_original_any.py](mypy/test/test_get_original_any.py)
 
 New test created to test the function `get_original_any()` in `mypy/stats.py`.
 
-//TODO: PLEASE SOMEONE HELP ME ADD THE LINK FOR THE COMMIT
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Luciano's-branch
 
 Old coverage results for `get_original_any()`:
 
@@ -288,7 +270,7 @@ Test 2: [mypy/test/test_get_func_docstring.py](mypy/test/test_get_func_docstring
 
 New test created to test the function `_get_func_docstring()` in `mypy/stubgen.py`.
 
-https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working //please add commit
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Luciano's-branch
 
 Old coverage results for `_get_func_docstring()`:
 
@@ -304,10 +286,6 @@ New coverage results for `_get_func_docstring()`:
 
 
 ### Overall
-
-<Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)>
-
-<Provide a screenshot of the new coverage results by running the existing tool using all test modifications made by the group>
 
 Command used:
 
@@ -332,8 +310,6 @@ Command used:
 ![After Screenshot 5](cov-after-ss5.png)
 
 ## Statement of individual contributions
-
-<Write what each group member did>
 
 #### Shane Prent (Goose-9 on Github):
 - Created pretty print and manipulation of the output buffer to allow for the groups coverage tool to be outputted and saved to a file when running tests.
