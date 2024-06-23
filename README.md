@@ -178,7 +178,7 @@ Test 1: [mypy/test/test_line_rate.py](mypy/test/test_line_rate.py)
 
 New test created to test the function `get_line_rate()` in `mypy/report.py`.
 
-NB! Only the file `mypy/test/test_line_rate.py` is relevant to this section.
+N.B. Only the file `mypy/test/test_line_rate.py` is relevant to this section.
 https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
 
 Old coverage results for `get_line_rate()`:
@@ -195,7 +195,7 @@ New coverage results for `get_line_rate()`:
 
 The total coverage for the function get_line_rate() increased from 0% in the original function to 100% after the tests were added. The coverage increased as the new created test caused all the different branches in the function to be run and checks that the output is correct. Therefore, as every statement is run in the function, the statement coverage is 100% and since all other branches are accounted for and run, the branch coverage is also 100%. Since we added more lines to the actual function, the final coverage for the whole file will be affected by these extra statements and "pretty-print" functions, but it should not affect the  coverage drastically.
 
-NB! The final difference in the coverage over the whole file mypy/report.py is given below both tests!
+N.B. The final difference in the coverage over the whole file mypy/report.py is given below both tests!
 
 Test 2: [mypy/test/test_skip_path.py](mypy/test/test_skip_path.py)
 
