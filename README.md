@@ -189,7 +189,13 @@ Old coverage results for `get_line_rate()`:
 
 New coverage results for `get_line_rate()`:
 
-//TODO add screenshot of new coverage and explanation
+![New coverage results for get_line_rate()](cov-new-line-rate.png)
+
+*Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
+
+The total coverage for the function get_line_rate() increased from 0% in the original function to 100% after the tests were added. The coverage increased as the new created test caused all the different branches in the function to be run and checks that the output is correct. Therefore as every statement is run in the function, the statement coverage is 100% and since all other branches are accounted for and run, the branch coverage is also 100%. Since we added more lines to the actual function, the final coverage for the whole file will be affected by these extra statements and "pretty-print" functions, but it should not affect the  coverage drastically. 
+
+NB! The final difference in the coverage over the whole file mypy/report.py is given below both tests!
 
 Test 2: [mypy/test/test_skip_path.py](mypy/test/test_skip_path.py)
 
@@ -205,7 +211,20 @@ Old coverage results for `should_skip_path()`:
 
 New coverage results for `should_skip_path()`:
 
-//TODO add screenshot of new coverage and explanation
+*Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
+
+![New coverage results for should_skip_path()](cov-new-skip-path.png)
+
+The total coverage for the function should_skip_path() increased from 0% in the original function to 100% after the tests were added. The coverage increased as the new created test caused all the different branches in the function to be run and checks that the output is correct. Therefore as every statement is run in the function, the statement coverage is 100% and since all other branches are accounted for and run, the branch coverage is also 100%. Since we added more lines to the actual function, the final coverage for the whole file will be affected by these extra statements and "pretty-print" functions, but it should not affect the  coverage drastically. 
+
+*Final coverage before and after for mypy/report.py:*
+
+Before:
+![Report.py coverage before](cov-report-before.png)
+After:
+![Report.py coverage after](cov-report-after.png)
+
+NB! This 5% increase in coverage is affected by the newly added statements to the functions and relevant "pretty-print" functions that were added to the file.  
 
 #### Martin Oltmann (exegeist on Github)
 
