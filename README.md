@@ -246,6 +246,10 @@ New coverage results for `str_or_array_as_list()`:
 
 ![New coverage results for str_or_array_as_list()](cov-new-str_or_array_as_list.png)
 
+Initially, none of the branches or statements were covered by the tests. I mapped the function's branches like below, instrumented the function to track each branch, and wrote unit tests to raise coverage to 100%.
+
+![Function 1 analysis](SEP-Function1.png)
+
 Test 2: [mypy/test/test_config_parser.py](mypy/test/test_config_parser.py)
 
 New test created to test the function `convert_to_boolean()` in `mypy/config_parser.py`.
@@ -263,6 +267,10 @@ New coverage results for `convert_to_boolean()`:
 *Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
 
 ![New coverage results for convert_to_boolean()](cov-new-convert_to_boolean.png)
+
+Initially, only one of the six branches was covered by the tests. I mapped the function's branches like below, instrumented the function to track each branch, and wrote unit tests to raise coverage to 100%.
+
+![Function 2 analysis](SEP-Function2.png)
 
 
 #### Luciano Monteiro (Luciman8484 on GitHub)
