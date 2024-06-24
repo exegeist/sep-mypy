@@ -220,8 +220,11 @@ The total coverage for the function should_skip_path() increased from 0% in the 
 *Final coverage before and after for mypy/report.py:*
 
 Before:
+
 ![Report.py coverage before](cov-report-before.png)
+
 After:
+
 ![Report.py coverage after](cov-report-after.png)
 
 NB! This 5% increase in coverage is affected by the newly added statements to the functions and relevant "pretty-print" functions that were added to the file.
@@ -272,6 +275,13 @@ Initially, only one of the six branches was covered by the tests. I mapped the f
 
 ![Function 2 analysis](SEP-Function2.png)
 
+Before:
+
+![config_parser.py coverage before](cov-parser-before.png)
+
+After:
+
+![config_parser.py coverage after](cov-parser-after.png)
 
 #### Luciano Monteiro (Luciman8484 on GitHub)
 
