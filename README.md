@@ -301,7 +301,7 @@ New coverage results for `get_original_any()`:
 
 *Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
 
-![New coverage results for get_original_any()](cov-new-str_or_array_as_list.png) //TODO ADD THE SCREENSHOT
+![New coverage results for get_original_any()](cov-new-get_original_any.png)
 
 Test 2: [mypy/test/test_get_func_docstring.py](mypy/test/test_get_func_docstring.py)
 
@@ -319,7 +319,7 @@ New coverage results for `_get_func_docstring()`:
 
 *Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
 
-![New coverage results for _get_func_docstring()](cov-new-convert_to_boolean.png)
+![New coverage results for _get_func_docstring()](cov-new_get_func_docstring.png)
 
 
 ### Overall
