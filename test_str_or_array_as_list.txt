@@ -1,0 +1,19 @@
+
+All tests passed.
+
+Coverage results:
+
+Total number of branches: 8
+
+Results:
+is_string was hit
+nonempty_string was hit
+empty_string was hit
+is_sequence was hit
+sequence_some_empty was hit
+sequence_some_nonempty was hit
+loop_entered was hit
+loop_not_entered was hit
+
+Number of branches hit: 8
+Total branch coverage: 100.0%

@@ -1,193 +1,399 @@
-<img src="docs/source/mypy_light.svg" alt="mypy logo" width="300px"/>
+# Report for Assignment 1
 
-Mypy: Static Typing for Python
-=======================================
+## Project chosen
 
-[![Stable Version](https://img.shields.io/pypi/v/mypy?color=blue)](https://pypi.org/project/mypy/)
-[![Downloads](https://img.shields.io/pypi/dm/mypy)](https://pypistats.org/packages/mypy)
-[![Build Status](https://github.com/python/mypy/actions/workflows/test.yml/badge.svg)](https://github.com/python/mypy/actions)
-[![Documentation Status](https://readthedocs.org/projects/mypy/badge/?version=latest)](https://mypy.readthedocs.io/en/latest/?badge=latest)
-[![Chat at https://gitter.im/python/typing](https://badges.gitter.im/python/typing.svg)](https://gitter.im/python/typing?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Checked with mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Linting: Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+Name: mypy
 
-Got a question?
----------------
+URL: https://github.com/python/mypy
 
-We are always happy to answer questions! Here are some good places to ask them:
+Programming language: Python
 
-- for anything you're curious about, try [gitter chat](https://gitter.im/python/typing)
-- for general questions about Python typing, try [typing discussions](https://github.com/python/typing/discussions)
+Lines of code: 86,419 (counted with lizard)
 
-If you're just getting started,
-[the documentation](https://mypy.readthedocs.io/en/stable/index.html)
-and [type hints cheat sheet](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html)
-can also help answer questions.
+## Coverage measurement
 
-If you think you've found a bug:
+### Existing tool
 
-- check our [common issues page](https://mypy.readthedocs.io/en/stable/common_issues.html)
-- search our [issue tracker](https://github.com/python/mypy/issues) to see if
-  it's already been reported
-- consider asking on [gitter chat](https://gitter.im/python/typing)
+The project already had an existing tool integrated already: [pytest-cov](https://github.com/pytest-dev/pytest-cov), with [coverage.py](https://github.com/nedbat/coveragepy) (v7.3.2) under the hood. We ran the following command to create an initial coverage report:
 
-To report a bug or request an enhancement:
-
-- report at [our issue tracker](https://github.com/python/mypy/issues)
-- if the issue is with a specific library or function, consider reporting it at
-  [typeshed tracker](https://github.com/python/typeshed/issues) or the issue
-  tracker for that library
-
-To discuss a new type system feature:
-
-- discuss at [discuss.python.org](https://discuss.python.org/c/typing/32)
-- there is also some historical discussion at the [typing-sig mailing list](https://mail.python.org/archives/list/typing-sig@python.org/) and the [python/typing repo](https://github.com/python/typing/issues)
-
-What is mypy?
--------------
-
-Mypy is a static type checker for Python.
-
-Type checkers help ensure that you're using variables and functions in your code
-correctly. With mypy, add type hints ([PEP 484](https://www.python.org/dev/peps/pep-0484/))
-to your Python programs, and mypy will warn you when you use those types
-incorrectly.
-
-Python is a dynamic language, so usually you'll only see errors in your code
-when you attempt to run it. Mypy is a *static* checker, so it finds bugs
-in your programs without even running them!
-
-Here is a small example to whet your appetite:
-
-```python
-number = input("What is your favourite number?")
-print("It is", number + 1)  # error: Unsupported operand types for + ("str" and "int")
+```
+python -m pytest -q --cov mypy --cov-config .coveragerc --cov-report=term-missing --cov-report=html
 ```
 
-Adding type hints for mypy does not interfere with the way your program would
-otherwise run. Think of type hints as similar to comments! You can always use
-the Python interpreter to run your code, even if mypy reports errors.
+![.coveragerc](coveragerc.png)
 
-Mypy is designed with gradual typing in mind. This means you can add type
-hints to your code base slowly and that you can always fall back to dynamic
-typing when static typing is not convenient.
+The initial results:
 
-Mypy has a powerful and easy-to-use type system, supporting features such as
-type inference, generics, callable types, tuple types, union types,
-structural subtyping and more. Using mypy will make your programs easier to
-understand, debug, and maintain.
+![Before Screenshot 1](cov-before-ss1.png)
+![Before Screenshot 2](cov-before-ss2.png)
+![Before Screenshot 3](cov-before-ss3.png)
+![Before Screenshot 4](cov-before-ss4.png)
+![Before Screenshot 5](cov-before-ss5.png)
 
-See [the documentation](https://mypy.readthedocs.io/en/stable/index.html) for
-more examples and information.
+### Our own coverage tool
 
-In particular, see:
+#### Shane Prent (Goose-9 on GitHub)
 
-- [type hints cheat sheet](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html)
-- [getting started](https://mypy.readthedocs.io/en/stable/getting_started.html)
-- [list of error codes](https://mypy.readthedocs.io/en/stable/error_code_list.html)
+Function 1: `visit_deleted_type()` in `mypy/meet.py`
 
-Quick start
------------
+Coverage tool implemented in `mypy/meet_with_coverage.py` as it allowed for a better printing system and code organisation. The function `visit_deleted_type()` in `meet_with_coverage.py` is a copy/overridden version of the same function in `mypy/meet.py`
 
-Mypy can be installed using pip:
+https://github.com/python/mypy/commit/e63f6189d20e5663f18001252845db82c6a6c875
 
-```bash
-python3 -m pip install -U mypy
-```
+Coverage results output can also be seen in [test_visit_deleted_output.txt](test_visit_deleted_output.txt):
 
-If you want to run the latest version of the code, you can install from the
-repo directly:
+!["Output txt file created by visit_deleted_type()](visit_deleted_type_output.png)
 
-```bash
-python3 -m pip install -U git+https://github.com/python/mypy.git
-# or if you don't have 'git' installed
-python3 -m pip install -U https://github.com/python/mypy/zipball/master
-```
+Function 2: `visit_type_var_tuple()` in `mypy/meet.py`
 
-Now you can type-check the [statically typed parts] of a program like this:
+Coverage tool implemented in `mypy/meet_with_coverage.py` as it again allowed for a better printing system and code organisation. The function `visit_type_var_tuple()` in `meet_with_coverage.py` is a copy/overridden version of the same function in `mypy/meet.py`
 
-```bash
-mypy PROGRAM
-```
+https://github.com/python/mypy/commit/e63f6189d20e5663f18001252845db82c6a6c875
 
-You can always use the Python interpreter to run your statically typed
-programs, even if mypy reports type errors:
+Coverage results can be seen in [test_visit_var_tuple_output.txt](test_visit_var_tuple_output.txt):
 
-```bash
-python3 PROGRAM
-```
+!["Output .txt file created by visit_type_var_tuple_output()](visit_type_var_tuple_output.png)
 
-You can also try mypy in an [online playground](https://mypy-play.net/) (developed by
-Yusuke Miyazaki). If you are working with large code bases, you can run mypy in
-[daemon mode], that will give much faster (often sub-second) incremental updates:
+#### Justin Prent (JustinPrent on GitHub)
 
-```bash
-dmypy run -- PROGRAM
-```
+Function 1: `get_line_rate()` in `mypy/report.py`
 
-[statically typed parts]: https://mypy.readthedocs.io/en/latest/getting_started.html#function-signatures-and-dynamic-vs-static-typing
-[daemon mode]: https://mypy.readthedocs.io/en/stable/mypy_daemon.html
+The link below shows the comparison between my working branch and the original master branch. It also includes the pretty print used to create the coverage output:
 
-Integrations
-------------
+N.B. Only lines 130-158 of `mypy/report.py` are relevant to this function.
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
 
-Mypy can be integrated into popular IDEs:
+Coverage results can be seen in [test_line_rate.txt](test_line_rate.txt):
 
-- Vim:
-  - Using [Syntastic](https://github.com/vim-syntastic/syntastic): in `~/.vimrc` add
-    `let g:syntastic_python_checkers=['mypy']`
-  - Using [ALE](https://github.com/dense-analysis/ale): should be enabled by default when `mypy` is installed,
-    or can be explicitly enabled by adding `let b:ale_linters = ['mypy']` in `~/vim/ftplugin/python.vim`
-- Emacs: using [Flycheck](https://github.com/flycheck/)
-- Sublime Text: [SublimeLinter-contrib-mypy](https://github.com/fredcallaway/SublimeLinter-contrib-mypy)
-- Atom: [linter-mypy](https://atom.io/packages/linter-mypy)
-- PyCharm: [mypy plugin](https://github.com/dropbox/mypy-PyCharm-plugin) (PyCharm integrates
-  [its own implementation](https://www.jetbrains.com/help/pycharm/type-hinting-in-product.html) of [PEP 484](https://peps.python.org/pep-0484/))
-- VS Code: provides [basic integration](https://code.visualstudio.com/docs/python/linting#_mypy) with mypy.
-- pre-commit: use [pre-commit mirrors-mypy](https://github.com/pre-commit/mirrors-mypy).
+![Output .txt file created by test_line_rate.py](test_line_rate_output_photo.png)
 
-Web site and documentation
---------------------------
+Function 2: `should_skip_path()` in `mypy/report.py`
 
-Additional information is available at the web site:
+The link below shows the comparison between my working branch and the original master branch. It is the same link given in the function above:
 
-  <https://www.mypy-lang.org/>
+N.B. Only lines 595-620 of `mypy/report.py` are relevant to this function.
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
 
-Jump straight to the documentation:
+Coverage results can be seen in [test_skip_path.txt](test_skip_path.txt):
 
-  <https://mypy.readthedocs.io/>
+![Output .txt file created by test_skip_path.py](test_skip_path_output_photo.png)
 
-Follow along our changelog at:
+#### Martin Oltmann (exegeist on GitHub)
 
-  <https://mypy-lang.blogspot.com/>
+Function 1: `str_or_array_as_list()` in `mypy/config_parser.py`
 
-Contributing
-------------
+Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
 
-Help in testing, development, documentation and other tasks is
-highly appreciated and useful to the project. There are tasks for
-contributors of all experience levels.
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
 
-To get started with developing mypy, see [CONTRIBUTING.md](CONTRIBUTING.md).
+Coverage results can be seen in [test_str_or_array_as_list.txt](test_str_or_array_as_list.txt):
 
-If you need help getting started, don't hesitate to ask on [gitter](https://gitter.im/python/typing).
+![Output .txt file created by test_str_or_array_as_list.py](test_str_or_array_as_list_output.png)
 
-Mypyc and compiled version of mypy
-----------------------------------
+Function 2: `convert_to_boolean()` in `mypy/config_parser.py`
 
-[Mypyc](https://github.com/mypyc/mypyc) uses Python type hints to compile Python
-modules to faster C extensions. Mypy is itself compiled using mypyc: this makes
-mypy approximately 4 times faster than if interpreted!
+Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
 
-To install an interpreted mypy instead, use:
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
 
-```bash
-python3 -m pip install --no-binary mypy -U mypy
-```
+Coverage results can be seen in [test_convert_to_boolean.txt](test_convert_to_boolean.txt):
 
-To use a compiled version of a development
-version of mypy, directly install a binary from
-<https://github.com/mypyc/mypy_mypyc-wheels/releases/latest>.
+![Output .txt file created by test_convert_to_boolean.py](test_convert_to_boolean_output.png)
 
-To contribute to the mypyc project, check out <https://github.com/mypyc/mypyc>
+#### Luciano Monteiro (Luciman848484 on GitHub)
+
+Function 1: `get_original_any()` in `mypy/stats.py`
+
+Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
+
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Luciano's-branch
+
+Coverage results can be seen in [test_get_original_any_output.txt](test_get_original_any_output.txt):
+
+![Output .txt file created by test_get_original_any.py](test_get_original_any_output.png)
+
+Function 2: `_get_func_docstring()` in `mypy/subgen.py`
+
+Here is the comparison between my working branch and the original master branch which shows the changes I made to instrument the function and write the associated unit tests to improve coverage.
+
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Luciano's-branch
+
+Coverage results can be seen in [test_get_func_docstring.txt](test_get_func_docstring.txt):
+
+![Output .txt file created by test_get_func_docstring.py](test_get_func_docstring.png)
+
+## Coverage improvement
+
+### Individual tests
+
+#### Shane Prent (Goose-9 on GitHub)
+
+Test 1: [mypy/test/test_visit_deleted.py](mypy/test/test_visit_deleted.py)
+
+New test created to test the function `visit_deleted_type()` in `meet_with_coverage.py`.
+
+https://github.com/python/mypy/commit/ea6ae9075c7a9d5a4eec15020409b64eba4a3fa1
+
+Old coverage results for `visit_deleted_type()`:
+
+![Old coverage results for visit_deleted_type()](cov-old-visit_deleted_type.png)
+
+*Coverage is 0% for statement and branch coverage*
+
+New coverage results for `visit_deleted_type()`:
+
+![Old coverage results for visit_deleted_type()](cov-new-visit_deleted_type.png)
+
+*Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
+
+The total coverage improvement is 100%, as both the statement and branch coverage increased from 0% in the original function to 100% after the test was added. The coverage increased as the test caused all the different branches in the main function to run and checks the output of the function to make sure it is correct. As every statement is run in the function, the statement coverage is 100% and likewise, since all the branches are accounted for and run, the branch coverage is also 100%.
+
+Test 2: [mypy/test/test_visit_var_tuple.py](mypy/test/test_visit_var_tuple.py)
+
+New test created to test the function `visit_type_var_tuple()` in `meet_with_coverage.py`.
+
+https://github.com/python/mypy/commit/0a938d60da9fc923b9f9e7a67400b72b7c770f30
+
+Old coverage results for `visit_type_var_tuple()`:
+
+![Old coverage results for visit-type-var-tuple()](cov-old-visit-var-tuple.png)
+
+*Coverage is 0% for statement and branch coverage*
+
+New coverage results for `visit_type_var_tuple()`:
+
+![New coverage results for visit_type_var_tuple()](cov-new-visit-var-tuple.png)
+
+*Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
+
+The total coverage improvement is 100%, as both the statement and branch coverage increased from 0% in the original function to 100% after the test was added. The coverage increased as the test caused all the different branches in the main function to run and checks the output of the function to make sure it is correct. As every statement is run in the function, the statement coverage is 100% and likewise, since all the branches are accounted for and run, the branch coverage is also 100%.
+
+*Disclaimer: As explained in the "Coverage improvement" section, the result of the coverage improvement is run on the meet_with_coverage.py file and not meet.py. This is because, I decided to copy/inherit the original function from meet.py and implement my coverage tool in a new file meet_with_coverage.py. Thus, the tests run on the new functions in meet_with_coverage.py. The reasons for this is that it allowed me to create a pretty print function and keep all my changes in one file so that it is easy to see what I implemented. This means that the coverage improvement is shown over the meet_with_coverage.py file and not over the original meet.py file as shown below:*
+
+![Total coverage for meet_with_coverage.py](cov-total-meet_with_coverage.png)
+
+#### Justin Prent (JustinPrent on GitHub)
+
+Test 1: [mypy/test/test_line_rate.py](mypy/test/test_line_rate.py)
+
+New test created to test the function `get_line_rate()` in `mypy/report.py`.
+
+N.B. Only the file `mypy/test/test_line_rate.py` is relevant to this section.
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
+
+Old coverage results for `get_line_rate()`:
+
+*Coverage is 0% for statement and branch coverage*
+
+![Old coverage results for get_line_rate()](cov-old-line-rate.png)
+
+New coverage results for `get_line_rate()`:
+
+![New coverage results for get_line_rate()](cov-new-line-rate.png)
+
+*Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
+
+The total coverage for the function get_line_rate() increased from 0% in the original function to 100% after the tests were added. The coverage increased as the new created test caused all the different branches in the function to be run and checks that the output is correct. Therefore, as every statement is run in the function, the statement coverage is 100% and since all other branches are accounted for and run, the branch coverage is also 100%. Since we added more lines to the actual function, the final coverage for the whole file will be affected by these extra statements and "pretty-print" functions, but it should not affect the  coverage drastically.
+
+N.B. The final difference in the coverage over the whole file mypy/report.py is given below both tests!
+
+Test 2: [mypy/test/test_skip_path.py](mypy/test/test_skip_path.py)
+
+New test created to test the function `should_skip_path()` in `mypy/report.py`.
+
+N.B. Only the file `mypy/test/test_skip_path.py` is relevant to this section.
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Justin-working
+
+Old coverage results for `should_skip_path()`:
+*Coverage is 0% for statement and branch coverage*
+
+![Old coverage results for should_skip_path()](cov-old-skip-path.png)
+
+New coverage results for `should_skip_path()`:
+
+*Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
+
+![New coverage results for should_skip_path()](cov-new-skip-path.png)
+
+The total coverage for the function should_skip_path() increased from 0% in the original function to 100% after the tests were added. The coverage increased as the new created test caused all the different branches in the function to be run and checks that the output is correct. Therefore, as every statement is run in the function, the statement coverage is 100% and since all other branches are accounted for and run, the branch coverage is also 100%. Since we added more lines to the actual function, the final coverage for the whole file will be affected by these extra statements and "pretty-print" functions, but it should not affect the  coverage drastically.
+
+*Final coverage before and after for mypy/report.py:*
+
+Before:
+
+![Report.py coverage before](cov-report-before.png)
+
+After:
+
+![Report.py coverage after](cov-report-after.png)
+
+NB! This 5% increase in coverage is affected by the newly added statements to the functions and relevant "pretty-print" functions that were added to the file.
+
+#### Martin Oltmann (exegeist on GitHub)
+
+Test 1: [mypy/test/test_config_parser.py](mypy/test/test_config_parser.py)
+
+New test created to test the function `str_or_array_as_list()` in `mypy/config_parser.py`.
+
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
+
+Old coverage results for `str_or_array_as_list()`:
+
+*Coverage is 0% for statement and branch coverage*
+
+![Old coverage results for str_or_array_as_list()](cov-old-str_or_array_as_list.png)
+
+New coverage results for `str_or_array_as_list()`:
+
+*Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
+
+![New coverage results for str_or_array_as_list()](cov-new-str_or_array_as_list.png)
+
+Initially, none of the branches or statements were covered by the tests. I mapped the function's branches like below, instrumented the function to track each branch, and wrote unit tests to raise coverage to 100%.
+
+![Function 1 analysis](SEP-Function1.png)
+
+Test 2: [mypy/test/test_config_parser.py](mypy/test/test_config_parser.py)
+
+New test created to test the function `convert_to_boolean()` in `mypy/config_parser.py`.
+
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Martin-working
+
+Old coverage results for `convert_to_boolean()`:
+
+*Coverage is very low for statement and branch coverage*
+
+![Old coverage results for convert_to_boolean()](cov-old-convert_to_boolean.png)
+
+New coverage results for `convert_to_boolean()`:
+
+*Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
+
+![New coverage results for convert_to_boolean()](cov-new-convert_to_boolean.png)
+
+Initially, only one of the six branches was covered by the tests. I mapped the function's branches like below, instrumented the function to track each branch, and wrote unit tests to raise coverage to 100%.
+
+![Function 2 analysis](SEP-Function2.png)
+
+Before:
+
+![config_parser.py coverage before](cov-parser-before.png)
+
+After:
+
+![config_parser.py coverage after](cov-parser-after.png)
+
+#### Luciano Monteiro (Luciman8484 on GitHub)
+
+Test 1: [mypy/test/test_get_original_any.py](mypy/test/test_get_original_any.py)
+
+New test created to test the function `get_original_any()` in `mypy/stats.py`.
+
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Luciano's-branch
+
+Old coverage results for `get_original_any()`:
+
+*Coverage is 0% for statement and branch coverage*
+
+![Old coverage results for get_original_any()](cov-old-get_original_any.png)
+
+New coverage results for `get_original_any()`:
+
+*Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
+
+![New coverage results for get_original_any()](cov-new-get_original_any.png)
+
+The coverage for the `get_original_any()` function significantly increased from 0% to 100% for both statement and branch coverage. This improvement is due to the addition of test cases that now execute all code paths within the function. By identifying previously untested scenarios and ensuring that each conditional branch and line of code is executed during testing, the new suite of tests has enabled full coverage. This testing approach not only enhances code reliability but also ensures that any potential bugs are detected early, and so improving the overall quality of the software.
+
+Final coverage before and after for `mypy/stats.py`:
+
+Before:
+
+![Old coverage for get_original_any()](stats_old_coverage.png)
+
+After:
+
+![New coverage for get_original_any()](stats_new_coverage.png)
+
+This coverage increase is not all due to the added tests, but also the custom functions that were needed to export the testing results.
+
+Test 2: [mypy/test/test_get_func_docstring.py](mypy/test/test_get_func_docstring.py)
+
+New test created to test the function `_get_func_docstring()` in `mypy/stubgen.py`.
+
+https://github.com/exegeist/sep-mypy/compare/master...exegeist:sep-mypy:Luciano's-branch
+
+Old coverage results for `_get_func_docstring()`:
+
+*Coverage is 0% for statement and branch coverage*
+
+![Old coverage results for _get_func_docstring()](cov-old-_get_func_docstring.png)
+
+New coverage results for `_get_func_docstring()`:
+
+*Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
+
+![New coverage results for _get_func_docstring()](cov-new_get_func_docstring.png)
+
+The coverage for the `_get_func_docstring()` function has improved from 0% to 100% for both statement and branch coverage. This was achieved by developing tests cases that run every line and branch within the function. Going through previously untested code paths, the new tests have increased the reliability and correctness of the function. This improvement is further validated by measurements from both our proprietary tool and `coverage.py`.
+
+Final coverage before and after for `mypy/stubgen.py`:
+
+Before:
+
+![Old coverage for get_original_any()](old_stubgen_cov.png)
+
+After:
+
+![New coverage for get_original_any()](new_stubgen_cov.png)
+
+### Overall
+
+Command used:
+
+```python -m pytest -q --cov mypy --cov-config .coveragerc --cov-report=term-missing --cov-report=html```
+
+![.coveragerc](coveragerc.png)
+
+#### Before:
+
+![Before Screenshot 1](cov-before-ss1.png)
+![Before Screenshot 2](cov-before-ss2.png)
+![Before Screenshot 3](cov-before-ss3.png)
+![Before Screenshot 4](cov-before-ss4.png)
+![Before Screenshot 5](cov-before-ss5.png)
+
+#### After:
+
+![After Screenshot 1](cov-after-ss1.png)
+![After Screenshot 2](cov-after-ss2.png)
+![After Screenshot 3](cov-after-ss3.png)
+![After Screenshot 4](cov-after-ss4.png)
+![After Screenshot 5](cov-after-ss5.png)
+
+## Statement of individual contributions
+
+#### Shane Prent (Goose-9 on GitHub):
+- Created pretty print and manipulation of the output buffer to allow for the groups coverage tool to be outputted and saved to a file when running tests.
+- Completed project information section in the report, as well as completing the full coverage reports seen in this document.
+- Implemented a coverage tool on 2 different functions with, originally, 0% coverage.
+- Created a test for each of the 2 functions, resulting in a coverage improvement (statement and branch) of 100% over the 2 functions.
+- Completed the relevant sections in the report under the name Shane Prent
+
+#### Justin Prent (JustinPrent on GitHub):
+- Implemented an original coverage tool on 2 different functions, which originally had 0% coverage.
+- Created a test for each of the 2 functions, ensuring coverage over every branch and statement, while also testing the logic of each function further to ensure correctness. This resulted in a coverage of 100% over the 2 functions.
+- Completed the relevant sections in the report under the name Justin Prent.
+
+#### Martin Oltmann (exegeist on GitHub):
+- Created the forked repository along with the WhatsApp and Discord group chats.
+- Implemented through instrumentation an original coverage tool on 2 functions which originally had 0% coverage.
+- Created unit tests for each of the 2 functions, ensuring coverage over every branch and statement, while simultaneously testing the logic of each function further to ensure correctness, resulting in a 100% coverage over the 2 functions.
+- Completed the relevant sections in the report under the name Martin Oltmann.
+
+#### Luciano Monteiro (Luciman8484 on GitHub):
+- Ran an initial coverage test to identify untested functions
+- Created tests for all branches in each function
+- Added tests for each individual branch, ensuring coverage of every possible outcome
+- Compared newly implemented tests with the old coverage to assess improvements
+- Completed the relevant sections in the report under the name Luciano Monteiro.

@@ -1,0 +1,20 @@
+Passed Test: visit_NoneType and visit_strict_optional
+Passed Test: visit_UninhabitedType
+Passed Test: visit_other_Type
+Passed Test: visit_NoneType and visit_non_strict_optional
+
+All tests passed.
+
+Coverage results:
+
+Total number of branches: 5
+
+Results:
+visit_NoneType was hit
+visit_UninhabitedType was hit
+visit_other_Type was hit
+visit_strict_optional was hit
+visit_non_strict_optional was hit
+
+Number of branches hit: 5
+Total branch coverage: 100.0%
