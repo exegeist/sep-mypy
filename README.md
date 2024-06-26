@@ -220,8 +220,11 @@ The total coverage for the function should_skip_path() increased from 0% in the 
 *Final coverage before and after for mypy/report.py:*
 
 Before:
+
 ![Report.py coverage before](cov-report-before.png)
+
 After:
+
 ![Report.py coverage after](cov-report-after.png)
 
 NB! This 5% increase in coverage is affected by the newly added statements to the functions and relevant "pretty-print" functions that were added to the file.
@@ -246,6 +249,10 @@ New coverage results for `str_or_array_as_list()`:
 
 ![New coverage results for str_or_array_as_list()](cov-new-str_or_array_as_list.png)
 
+Initially, none of the branches or statements were covered by the tests. I mapped the function's branches like below, instrumented the function to track each branch, and wrote unit tests to raise coverage to 100%.
+
+![Function 1 analysis](SEP-Function1.png)
+
 Test 2: [mypy/test/test_config_parser.py](mypy/test/test_config_parser.py)
 
 New test created to test the function `convert_to_boolean()` in `mypy/config_parser.py`.
@@ -264,6 +271,17 @@ New coverage results for `convert_to_boolean()`:
 
 ![New coverage results for convert_to_boolean()](cov-new-convert_to_boolean.png)
 
+Initially, only one of the six branches was covered by the tests. I mapped the function's branches like below, instrumented the function to track each branch, and wrote unit tests to raise coverage to 100%.
+
+![Function 2 analysis](SEP-Function2.png)
+
+Before:
+
+![config_parser.py coverage before](cov-parser-before.png)
+
+After:
+
+![config_parser.py coverage after](cov-parser-after.png)
 
 #### Luciano Monteiro (Luciman8484 on GitHub)
 
