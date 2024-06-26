@@ -335,7 +335,7 @@ New coverage results for `_get_func_docstring()`:
 
 ![New coverage results for _get_func_docstring()](cov-new_get_func_docstring.png)
 
-The coverage for the `_get_func_docstring()` function has improved from 0% to 100% for both statement and branch coverage. This was achieved by developing tests cases that run every line and branch within the function. Going through previously untested code paths, the new tests have increased the reliability and correctness of the function. This improvement is further validated by measurements from both our proprietary tool and coverage.py.
+The coverage for the `_get_func_docstring()` function has improved from 0% to 100% for both statement and branch coverage. This was achieved by developing tests cases that run every line and branch within the function. Going through previously untested code paths, the new tests have increased the reliability and correctness of the function. This improvement is further validated by measurements from both our proprietary tool and `coverage.py`.
 
 Final coverage before and after for `mypy/stubgen.py`:
 
