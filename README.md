@@ -151,6 +151,10 @@ New coverage results for `visit_deleted_type()`:
 
 Our coverage tool output, after making tests, can be seen in [test_visit_deleted_output.txt](test_visit_deleted_output.txt):
 
+Coverage tool output after making tests:
+
+![](visit_deleted_type_cov_tool_after.png)
+
 The total coverage improvement is 100%, as both the statement and branch coverage increased from 0% in the original function to 100% after the test was added. The coverage increased as the test caused all the different branches in the main function to run and checks the output of the function to make sure it is correct. As every statement is run in the function, the statement coverage is 100% and likewise, since all the branches are accounted for and run, the branch coverage is also 100%.
 
 Test 2: [mypy/test/test_visit_var_tuple.py](mypy/test/test_visit_var_tuple.py)
@@ -172,6 +176,10 @@ New coverage results for `visit_type_var_tuple()`:
 *Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
 
 Our coverage tool output, after making tests, can be seen in [test_visit_var_tuple_output.txt](test_visit_var_tuple_output.txt):
+
+Coverage tool output after making tests:
+
+![](visit_type_var_tuple_cov_tool_after.png)
 
 The total coverage improvement is 100%, as both the statement and branch coverage increased from 0% in the original function to 100% after the test was added. The coverage increased as the test caused all the different branches in the main function to run and checks the output of the function to make sure it is correct. As every statement is run in the function, the statement coverage is 100% and likewise, since all the branches are accounted for and run, the branch coverage is also 100%.
 
@@ -202,6 +210,10 @@ New coverage results for `get_line_rate()`:
 
 Our coverage tool output, after making tests, can be seen in [test_line_rate.txt](test_line_rate.txt):
 
+Coverage tool output after making tests:
+
+![](line_rate_cov_tool_after.png)
+
 The total coverage for the function get_line_rate() increased from 0% in the original function to 100% after the tests were added. The coverage increased as the new created test caused all the different branches in the function to be run and checks that the output is correct. Therefore, as every statement is run in the function, the statement coverage is 100% and since all other branches are accounted for and run, the branch coverage is also 100%. Since we added more lines to the actual function, the final coverage for the whole file will be affected by these extra statements and "pretty-print" functions, but it should not affect the  coverage drastically.
 
 N.B. The final difference in the coverage over the whole file mypy/report.py is given below both tests!
@@ -226,6 +238,10 @@ New coverage results for `should_skip_path()`:
 *Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
 
 Our coverage tool output, after making tests, can be seen in [test_skip_path.txt](test_skip_path.txt):
+
+Coverage tool output after making tests:
+
+![](skip_path_cov_tool_after.png)
 
 The total coverage for the function should_skip_path() increased from 0% in the original function to 100% after the tests were added. The coverage increased as the new created test caused all the different branches in the function to be run and checks that the output is correct. Therefore, as every statement is run in the function, the statement coverage is 100% and since all other branches are accounted for and run, the branch coverage is also 100%. Since we added more lines to the actual function, the final coverage for the whole file will be affected by these extra statements and "pretty-print" functions, but it should not affect the  coverage drastically.
 
@@ -263,6 +279,10 @@ New coverage results for `str_or_array_as_list()`:
 
 Our coverage tool output, after making tests, can be seen in [test_str_or_array_as_list.txt](test_str_or_array_as_list.txt):
 
+Coverage tool output after making tests:
+
+![](str_or_array_as_list_cov_tool_after.png)
+
 Initially, none of the branches or statements were covered by the tests. I mapped the function's branches like below, instrumented the function to track each branch, and wrote unit tests to raise coverage to 100%.
 
 ![Function 1 analysis](SEP-Function1.png)
@@ -286,6 +306,10 @@ New coverage results for `convert_to_boolean()`:
 *Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
 
 Our coverage tool output, after making tests, can be seen in [test_convert_to_boolean.txt](test_convert_to_boolean.txt):
+
+Coverage tool output after making tests:
+
+![](convert_to_boolean_cov_tool_after.png)
 
 Initially, only one of the six branches was covered by the tests. I mapped the function's branches like below, instrumented the function to track each branch, and wrote unit tests to raise coverage to 100%.
 
@@ -323,6 +347,10 @@ New coverage results for `get_original_any()`:
 
 Our coverage tool output, after making tests, can be seen in [test_get_original_any_output.txt](test_get_original_any_output.txt):
 
+Coverage tool output after making tests:
+
+![](get_original_any_cov_tool_after.png)
+
 The coverage for the `get_original_any()` function significantly increased from 0% to 100% for both statement and branch coverage. This improvement is due to the addition of test cases that now execute all code paths within the function. By identifying previously untested scenarios and ensuring that each conditional branch and line of code is executed during testing, the new suite of tests has enabled full coverage. This testing approach not only enhances code reliability but also ensures that any potential bugs are detected early, and so improving the overall quality of the software.
 
 Final coverage before and after for the full file `mypy/stats.py`:
@@ -356,6 +384,10 @@ New coverage results for `_get_func_docstring()`:
 *Coverage is 100% for statement and branch coverage (measured using own tool and coverage.py)*
 
 Our coverage tool output, after making tests, can be seen in [test_get_func_docstring.txt](test_get_func_docstring.txt):
+
+Coverage tool output after making tests:
+
+![](get_func_docstring_cov_tool_after.png)
 
 The coverage for the `_get_func_docstring()` function has improved from 0% to 100% for both statement and branch coverage. This was achieved by developing tests cases that run every line and branch within the function. Going through previously untested code paths, the new tests have increased the reliability and correctness of the function. This improvement is further validated by measurements from both our proprietary tool and `coverage.py`.
 
